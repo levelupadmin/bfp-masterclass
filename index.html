@@ -56,8 +56,8 @@
   .eyebrow{
     font-family: var(--mono);
     font-size: 12px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    /* tt-off */
     color: var(--dim);
   }
   .eyebrow .dot{ color: var(--accent); }
@@ -65,9 +65,9 @@
   .section-num{
     font-family: var(--mono);
     font-size: 11px;
-    letter-spacing: 0.2em;
+    letter-spacing: 0.04em;
     color: var(--dimmer);
-    text-transform: uppercase;
+    /* tt-off */
     display: inline-flex; gap: 14px; align-items: center;
     margin-bottom: 28px;
   }
@@ -107,8 +107,8 @@
   .micro{
     font-family: var(--mono);
     font-size: 11.5px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    /* tt-off */
     color: var(--dim);
   }
 
@@ -124,7 +124,7 @@
     padding: 14px 32px;
     max-width: 1400px; margin: 0 auto;
     font-family: var(--mono);
-    font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    font-size: 12px; letter-spacing: 0.04em; /* tt-off */
     color: var(--dim);
   }
   .brand{
@@ -160,7 +160,7 @@
     display: inline-flex; align-items: center; justify-content:center;
     gap: 12px; padding: 18px 28px;
     font-family: var(--mono);
-    font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
+    font-size: 13px; letter-spacing: 0.04em; /* tt-off */
     font-weight: 500;
     border-radius: 0;
     transition: transform .2s ease, background .2s ease;
@@ -220,7 +220,7 @@
     border: 1px solid var(--rule-2);
     color: var(--fg-2);
     font-family: var(--mono);
-    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    font-size: 11px; letter-spacing: 0.04em; /* tt-off */
     margin-bottom: 44px;
   }
   .hero-tag .divider{ width: 1px; height: 10px; background: var(--rule-2); }
@@ -261,7 +261,7 @@
   }
   .detail-card h4{
     font-family: var(--mono);
-    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    font-size: 11px; letter-spacing: 0.04em; /* tt-off */
     color: var(--dim);
     margin-bottom: 20px;
   }
@@ -278,7 +278,7 @@
     color: var(--accent);
     font-family: var(--mono);
     font-size: 11px;
-    letter-spacing: .14em;
+    letter-spacing: 0.04em;
     padding-top: 3px;
   }
   .detail-list .v strong{ color: var(--fg); font-weight: 500; }
@@ -288,7 +288,7 @@
   .cta-trust{
     margin-top: 18px;
     font-family: var(--mono);
-    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    font-size: 11px; letter-spacing: 0.04em; /* tt-off */
     color: var(--dim);
   }
 
@@ -315,7 +315,7 @@
     overflow:hidden;
     padding: 18px 0;
     font-family: var(--mono);
-    font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+    font-size: 12px; letter-spacing: 0.04em; /* tt-off */
     color: var(--dim);
     background: var(--bg-2);
   }
@@ -351,7 +351,7 @@
     margin-top: 28px;
   }
   .problem-body p{ color: var(--fg-2); font-size: 17px; line-height: 1.7; margin: 0 0 20px; }
-  .problem-body p .hang{ color: var(--dim); font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; display:inline-block; width: 40px; vertical-align: top; margin-right: 6px; }
+  .problem-body p .hang{ color: var(--dim); font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; display:inline-block; width: 40px; vertical-align: top; margin-right: 6px; }
   .problem-body .bang{
     margin-top: 36px; padding: 28px; border-left: 2px solid var(--accent);
     background: var(--bg-2);
@@ -382,7 +382,7 @@
   .module:hover{ background: color-mix(in oklab, var(--accent-soft) 50%, transparent); }
   .module .no{
     font-family: var(--mono);
-    font-size: 13px; letter-spacing: 0.14em;
+    font-size: 13px; letter-spacing: 0.04em;
     color: var(--accent);
   }
   .module .title{
@@ -391,7 +391,7 @@
     line-height: 1.1;
     letter-spacing: -0.01em;
   }
-  .module .title .mi{ display:block; font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; color: var(--dim); text-transform: uppercase; margin-bottom: 10px; }
+  .module .title .mi{ display:block; font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; color: var(--dim); /* tt-off */ margin-bottom: 10px; }
   .module .desc{ color: var(--fg-2); font-size: 16px; line-height: 1.65; }
   @media (max-width: 860px){ .module{ grid-template-columns: 1fr; gap: 16px; padding: 36px 0; } }
 
@@ -416,17 +416,17 @@
     z-index: 1;
   }
   .portrait::before{
-    content: "PORTRAIT · RAHUL SRINIVAS"; position: absolute;
+    content: "Portrait · Rahul Srinivas"; position: absolute;
     top: 16px; left: 16px;
-    font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.04em;
     color: var(--fg);
     mix-blend-mode: difference;
     z-index: 3;
   }
   .portrait::after{
-    content: "FRAME 01 · 2026"; position: absolute;
+    content: "Frame 01 · 2026"; position: absolute;
     bottom: 16px; right: 16px;
-    font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.04em;
     color: var(--fg);
     mix-blend-mode: difference;
     z-index: 3;
@@ -444,7 +444,7 @@
   .portrait .ticks::after{ top:50%; left: -8px; right: -8px; height:1px; transform: translateY(-50%); }
 
   .mentor h2 .name{ color: var(--accent); font-style: normal; }
-  .mentor .role{ margin-top: 12px; color: var(--dim); font-family: var(--mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; }
+  .mentor .role{ margin-top: 12px; color: var(--dim); font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; /* tt-off */ }
   .mentor .bio p{ color: var(--fg-2); font-size: 17px; line-height: 1.7; margin: 20px 0 0; }
   .mentor .bio p strong{ color: var(--fg); font-weight: 500; }
 
@@ -468,7 +468,7 @@
   .stat .l{
     margin-top: 14px;
     font-family: var(--mono);
-    font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    font-size: 11px; letter-spacing: 0.04em; /* tt-off */
     color: var(--dim);
   }
   @media (max-width: 860px){ .stat-bar{ grid-template-columns: repeat(2,1fr); } .stat:nth-child(2){ border-right:0 } .stat:nth-child(1),.stat:nth-child(2){ border-bottom:1px solid var(--rule);} }
@@ -510,10 +510,10 @@
     width: 56px; height: 56px;
     display: inline-flex; align-items: center; justify-content: center;
     border: 1.5px solid var(--warn); color: var(--warn);
-    font-family: var(--mono); font-size: 13px; letter-spacing: 0.1em;
+    font-family: var(--mono); font-size: 13px; letter-spacing: 0.04em;
     transform: rotate(-3deg);
   }
-  .warn h4{ font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warn); margin-bottom: 10px; }
+  .warn h4{ font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; /* tt-off */ color: var(--warn); margin-bottom: 10px; }
   .warn p{ margin: 0; color: var(--fg-2); font-size: 16px; line-height: 1.6; }
   @media (max-width: 560px){ .warn{ grid-template-columns: 1fr; } }
 
@@ -544,7 +544,7 @@
   }
   .t .who-line{
     margin-top: 32px; display:flex; align-items:center; gap: 14px;
-    font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dim);
+    font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.04em; /* tt-off */ color: var(--dim);
   }
   .t .avatar{
     width: 36px; height: 36px; border-radius: 50%;
@@ -581,7 +581,7 @@
     color: var(--accent); font-family: var(--mono); font-size: 13px;
   }
   .info h4{
-    font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim);
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; /* tt-off */ color: var(--dim);
   }
   .info .big{
     font-family: var(--display); font-size: clamp(22px, 2vw, 28px); line-height: 1.15; color: var(--fg);
@@ -600,11 +600,11 @@
     padding: 28px 0; border-bottom: 1px solid var(--rule);
     align-items: center;
   }
-  .bonus-row .no{ font-family: var(--mono); font-size: 12px; color: var(--dim); letter-spacing: 0.14em; }
+  .bonus-row .no{ font-family: var(--mono); font-size: 12px; color: var(--dim); letter-spacing: 0.04em; }
   .bonus-row .ttl{ font-family: var(--display); font-size: clamp(20px, 1.8vw, 24px); line-height: 1.2; }
   .bonus-row .ttl .sub{ display:block; color: var(--dim); font-family: var(--sans); font-size: 14px; margin-top: 6px; line-height: 1.5; }
   .bonus-row .val{
-    font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent);
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; /* tt-off */ color: var(--accent);
   }
   @media (max-width: 560px){ .bonus-row{ grid-template-columns: 30px 1fr; } .bonus-row .val{ grid-column: 2; } }
 
@@ -615,7 +615,7 @@
     display:flex; flex-direction: column; gap: 20px;
   }
   .countdown .label{
-    font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim);
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; /* tt-off */ color: var(--dim);
   }
   .cd-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
   .cd{
@@ -627,12 +627,12 @@
   .cd .n{
     font-family: var(--display); font-size: clamp(34px, 4vw, 54px); color: var(--accent); line-height: 1; letter-spacing: -0.01em;
   }
-  .cd .u{ margin-top: 8px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim); }
+  .cd .u{ margin-top: 8px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.04em; /* tt-off */ color: var(--dim); }
 
   .seat-bar{
     margin-top: 24px;
     display:flex; flex-direction: column; gap: 10px;
-    font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; /* tt-off */
   }
   .seat-bar .t{ display:flex; justify-content: space-between; color: var(--dim); background: transparent; padding: 0; min-height: 0; }
   .seat-bar .track{
@@ -660,7 +660,7 @@
   }
   details summary::-webkit-details-marker{ display:none; }
   details .q-no{
-    font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; color: var(--accent);
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; color: var(--accent);
   }
   details .chev{
     font-family: var(--mono); color: var(--dim);
@@ -711,7 +711,7 @@
     font-family: var(--display); font-size: 1.2em; color: var(--accent); font-style: normal;
   }
   .final .cta-wrap{ margin-top: 48px; display:flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
-  .final-trust{ margin-top: 32px; color: var(--dim); font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; }
+  .final-trust{ margin-top: 32px; color: var(--dim); font-family: var(--mono); font-size: 11px; letter-spacing: 0.04em; /* tt-off */ }
 
   /* ---------- brand story ---------- */
   .brand-story{
@@ -742,15 +742,15 @@
     font-size: clamp(48px, 7vw, 104px);
     line-height: 0.95;
     letter-spacing: -0.025em;
-    text-transform: uppercase;
+    /* tt-off */
   }
   .brand-sub{
     margin-top: 18px;
     color: var(--accent);
     font-family: var(--mono);
     font-size: 13px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    /* tt-off */
   }
   .brand-body{
     margin-top: 48px;
@@ -806,8 +806,8 @@
     font-size: 16px;
     font-family: var(--mono);
     font-size: 12px;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    /* tt-off */
   }
   .roster{
     margin-top: 40px;
@@ -817,8 +817,8 @@
   .roster-head{
     font-family: var(--mono);
     font-size: 11px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    /* tt-off */
     color: var(--dim);
     margin-bottom: 20px;
   }
@@ -840,7 +840,7 @@
     padding: 48px 0 64px;
     color: var(--dim);
     font-family: var(--mono);
-    font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase;
+    font-size: 11.5px; letter-spacing: 0.04em; /* tt-off */
   }
   footer .row{
     display:flex; justify-content: space-between; gap: 24px; flex-wrap: wrap;
@@ -1035,10 +1035,10 @@
     </div>
 
     <div class="problem-body">
-      <p><span class="hang">IF</span>you've been watching YouTube tutorials for months but never shot a frame…</p>
-      <p><span class="hang">IF</span>you dreamed of film school but the ₹8–12 lakh price tag killed it…</p>
-      <p><span class="hang">IF</span>you have stories in your head but no one around you takes "filmmaking" seriously…</p>
-      <p><span class="hang">IF</span>you've been waiting for the "right time," the "right camera," or the "right connections"…</p>
+      <p><span class="hang">If</span>you've been watching YouTube tutorials for months but never shot a frame…</p>
+      <p><span class="hang">If</span>you dreamed of film school but the ₹8–12 lakh price tag killed it…</p>
+      <p><span class="hang">If</span>you have stories in your head but no one around you takes "filmmaking" seriously…</p>
+      <p><span class="hang">If</span>you've been waiting for the "right time," the "right camera," or the "right connections"…</p>
 
       <div class="bang">
         You're not alone. You're in the 99. And the reason you're stuck isn't laziness. It isn't lack of talent. It's a <strong>system</strong> that was designed to keep you out.
@@ -1061,7 +1061,7 @@
     <div class="modules">
 
       <div class="module">
-        <div class="no">MODULE 1</div>
+        <div class="no">Module 1</div>
         <div>
           <div class="title"><span class="mi">Landscape</span>The New Filmmaking Landscape</div>
         </div>
@@ -1069,7 +1069,7 @@
       </div>
 
       <div class="module">
-        <div class="no">MODULE 2</div>
+        <div class="no">Module 2</div>
         <div>
           <div class="title"><span class="mi">Pathways</span>The 5 Doors Into Filmmaking</div>
         </div>
@@ -1077,7 +1077,7 @@
       </div>
 
       <div class="module">
-        <div class="no">MODULE 3</div>
+        <div class="no">Module 3</div>
         <div>
           <div class="title"><span class="mi">Workflow</span>How a Short Film Actually Gets Made</div>
         </div>
@@ -1085,7 +1085,7 @@
       </div>
 
       <div class="module">
-        <div class="no">MODULE 4</div>
+        <div class="no">Module 4</div>
         <div>
           <div class="title"><span class="mi">Craft</span>The 5 Craft Layers Every Great Scene Uses</div>
         </div>
@@ -1093,7 +1093,7 @@
       </div>
 
       <div class="module">
-        <div class="no">MODULE 5</div>
+        <div class="no">Module 5</div>
         <div>
           <div class="title"><span class="mi">Plan</span>Your Next 30 Days</div>
         </div>
@@ -1175,7 +1175,7 @@
     </div>
 
     <div class="warn">
-      <div class="badge">NOT<br>FOR</div>
+      <div class="badge">Not<br>For</div>
       <div>
         <h4>⚠ This is NOT for you if…</h4>
         <p>You're looking for a magic shortcut or a "become a filmmaker in 7 days" hack. This session respects your time, which means we're going to tell you the truth, and the truth requires work.</p>
