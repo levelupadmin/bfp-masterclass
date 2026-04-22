@@ -1,0 +1,1385 @@
+<!DOCTYPE html><html lang="en"><head>
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BFP Masterclass: How to Start Your Filmmaking Career in 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.cdnfonts.com/css/aileron" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0E0D0B;
+    --bg-2: #141210;
+    --bg-3: #1A1815;
+    --fg: #FFFFFF;
+    --fg-2: #D9D2C4;
+    --dim: #CFC4B3;
+    --dimmer: #6D6759;
+    --rule: #2A2722;
+    --rule-2: #3A3630;
+    --accent: oklch(0.78 0.17 58);        /* warm amber */
+    --accent-ink: #0E0D0B;
+    --accent-soft: oklch(0.78 0.17 58 / 0.14);
+    --warn: oklch(0.65 0.19 25);           /* reserved red */
+    --display: "Aileron", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --sans: "Aileron", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+    --mono: "Aileron", ui-sans-serif, system-ui, sans-serif;
+  }
+
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--sans);
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    line-height: 1.55;
+    font-size: 16px;
+    overflow-x: hidden;
+  }
+  ::selection{ background: var(--accent); color: var(--accent-ink); }
+
+  a{color:inherit; text-decoration: none}
+  img{max-width:100%; display:block}
+  button{font: inherit; color: inherit; background:none; border:0; cursor: pointer}
+
+  /* ---------- layout primitives ---------- */
+  .wrap{ max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+  .wrap-narrow{ max-width: 920px; margin: 0 auto; padding: 0 32px; }
+  .rule{ height:1px; background: var(--rule); border:0; margin:0; }
+  .section{ padding: 120px 0; position: relative; }
+  .section-tight{ padding: 80px 0; }
+
+  .eyebrow{
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+  .eyebrow .dot{ color: var(--accent); }
+
+  .section-num{
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    color: var(--dimmer);
+    text-transform: uppercase;
+    display: inline-flex; gap: 14px; align-items: center;
+    margin-bottom: 28px;
+  }
+  .section-num::before{
+    content:""; width: 36px; height: 1px; background: var(--rule-2);
+  }
+
+  h1,h2,h3,h4{ margin:0; font-weight: 700; letter-spacing: -0.015em; }
+  .display{
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(48px, 7.2vw, 112px);
+    line-height: 0.98;
+    letter-spacing: -0.02em;
+  }
+  .display em{ font-weight: 400; color: var(--fg-2); }
+  .display .accent{ color: var(--accent); font-weight: 700; }
+
+  .h2{
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(36px, 5.2vw, 72px);
+    line-height: 1.02;
+    letter-spacing: -0.015em;
+  }
+  .h2 em{ font-weight: 400; color: var(--fg-2); }
+  .h3{
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(24px, 2.6vw, 34px);
+    line-height: 1.15;
+  }
+  .lede{
+    font-size: clamp(17px, 1.3vw, 20px);
+    font-weight: 600;
+    color: var(--fg-2);
+    max-width: 62ch;
+    line-height: 1.55;
+  }
+  .micro{
+    font-family: var(--mono);
+    font-size: 11.5px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--dim);
+  }
+
+  /* ---------- top bar ---------- */
+  .topbar{
+    position: sticky; top:0; z-index: 40;
+    backdrop-filter: blur(14px);
+    background: color-mix(in oklab, var(--bg) 78%, transparent);
+    border-bottom: 1px solid var(--rule);
+  }
+  .topbar-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 14px 32px;
+    max-width: 1400px; margin: 0 auto;
+    font-family: var(--mono);
+    font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--dim);
+  }
+  .brand{
+    display:flex; align-items:center; gap: 10px; color: var(--fg);
+  }
+  .brand-mark{
+    width: 14px; height: 14px; border: 1.5px solid var(--accent);
+    position: relative;
+  }
+  .brand-mark::after{
+    content:""; position:absolute; inset: 3px; background: var(--accent);
+  }
+  .topbar nav{ display:flex; gap: 28px; }
+  .topbar nav a:hover{ color: var(--fg); }
+  .topbar .live{
+    display:inline-flex; align-items:center; gap:8px; color: var(--fg);
+  }
+  .topbar .live::before{
+    content:""; width:7px; height:7px; border-radius:50%;
+    background: var(--accent);
+    box-shadow: 0 0 0 0 var(--accent);
+    animation: pulse 1.8s infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow: 0 0 0 0 color-mix(in oklab, var(--accent) 60%, transparent);}
+    70%{box-shadow: 0 0 0 8px transparent;}
+    100%{box-shadow: 0 0 0 0 transparent;}
+  }
+  @media (max-width: 780px){ .topbar nav{ display:none; } }
+
+  /* ---------- buttons ---------- */
+  .btn{
+    display: inline-flex; align-items: center; justify-content:center;
+    gap: 12px; padding: 18px 28px;
+    font-family: var(--mono);
+    font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 0;
+    transition: transform .2s ease, background .2s ease;
+  }
+  .btn-primary{
+    background: var(--accent); color: var(--accent-ink);
+    box-shadow: 0 0 0 1px var(--accent) inset;
+  }
+  .btn-primary:hover{ transform: translateY(-2px); }
+  .btn-primary .arrow{ transition: transform .2s ease; }
+  .btn-primary:hover .arrow{ transform: translateX(4px); }
+  .btn-ghost{
+    color: var(--fg); box-shadow: 0 0 0 1px var(--rule-2) inset;
+  }
+  .btn-ghost:hover{ background: var(--bg-3); }
+  .btn-lg{ padding: 22px 34px; font-size: 13px; }
+
+  /* ---------- hero ---------- */
+  .hero{
+    position: relative;
+    padding: 80px 0 0;
+    overflow: hidden;
+    background-color: var(--bg);
+  }
+  .hero::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url('assets/hero-bg.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+    pointer-events: none;
+  }
+  .hero::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(180deg, rgba(14,13,11,0.35) 0%, rgba(14,13,11,0.55) 55%, var(--bg) 100%);
+    z-index: 0;
+    pointer-events: none;
+  }
+  .hero > .wrap,
+  .hero > .marquee{ position: relative; z-index: 2; }
+  .hero > .filmstrip{ z-index: 1; }
+  .hero-inner{ padding-bottom: 120px; }
+  @media (max-width: 780px){
+    .hero::before{
+      background-image: url('assets/hero-bg-mobile.png');
+    }
+  }
+  .hero-tag{
+    display:inline-flex; align-items:center; gap: 14px;
+    padding: 8px 14px;
+    border: 1px solid var(--rule-2);
+    color: var(--fg-2);
+    font-family: var(--mono);
+    font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+    margin-bottom: 44px;
+  }
+  .hero-tag .divider{ width: 1px; height: 10px; background: var(--rule-2); }
+  .hero-tag .pin{ color: var(--accent); }
+
+  .hero h1{
+    font-family: var(--display);
+    font-size: clamp(54px, 8.8vw, 132px);
+    line-height: 0.96;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+    max-width: 14ch;
+    text-transform: none;
+  }
+  .hero h1 em{ font-weight: 400; color: var(--fg-2); }
+  .hero h1 .accent{ color: var(--accent); font-weight: 700; }
+  .hero-sub{
+    margin-top: 34px;
+    font-size: clamp(17px, 1.2vw, 19px);
+    color: var(--fg-2);
+    max-width: 56ch;
+    line-height: 1.6;
+  }
+
+  .hero-grid{
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 72px;
+    align-items: end;
+    margin-top: 72px;
+  }
+  @media (max-width: 980px){ .hero-grid{ grid-template-columns: 1fr; gap: 48px; } }
+
+  .detail-card{
+    border: 1px solid var(--rule-2);
+    padding: 28px;
+    background: var(--bg-2);
+  }
+  .detail-card h4{
+    font-family: var(--mono);
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--dim);
+    margin-bottom: 20px;
+  }
+  .detail-list{ list-style: none; padding:0; margin:0; display:grid; gap: 16px; }
+  .detail-list li{
+    display:grid; grid-template-columns: 22px 1fr; gap: 14px;
+    align-items:start;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--rule);
+    font-size: 15px;
+  }
+  .detail-list li:last-child{ border-bottom: 0; padding-bottom: 0; }
+  .detail-list .k{
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: .14em;
+    padding-top: 3px;
+  }
+  .detail-list .v strong{ color: var(--fg); font-weight: 500; }
+  .detail-list .v .tiny{ color: #CFC4B3; font-size: 13px; }
+
+  .cta-block{ margin-top: 28px; }
+  .cta-trust{
+    margin-top: 18px;
+    font-family: var(--mono);
+    font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--dim);
+  }
+
+  /* hero film perforations background */
+  .filmstrip{
+    position: absolute; inset: 0; pointer-events: none;
+    opacity: 0.35;
+  }
+  .filmstrip .edge{
+    position: absolute; top: 0; bottom: 0; width: 30px;
+    background-image:
+      linear-gradient(#181613 50%, transparent 50%),
+      linear-gradient(90deg, transparent 6px, #2A2722 6px, #2A2722 24px, transparent 24px);
+    background-size: 30px 46px, 30px 46px;
+    background-repeat: repeat-y;
+  }
+  .filmstrip .edge.left{ left: -2px; }
+  .filmstrip .edge.right{ right: -2px; }
+
+  /* scroll marquee under hero */
+  .marquee{
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    overflow:hidden;
+    padding: 18px 0;
+    font-family: var(--mono);
+    font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--dim);
+    background: var(--bg-2);
+  }
+  .marquee-track{
+    display: flex; gap: 48px;
+    animation: scroll 42s linear infinite;
+    white-space: nowrap;
+  }
+  .marquee-track span .star{ color: var(--accent); margin: 0 6px; }
+  @keyframes scroll{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(-50%); }
+  }
+
+  /* ---------- problem section ---------- */
+  .problem{ background: var(--bg); }
+  .problem-inner{ display:grid; grid-template-columns: 5fr 7fr; gap: 80px; }
+  @media (max-width: 980px){ .problem-inner{ grid-template-columns: 1fr; gap: 40px; } }
+  .problem h2{
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(40px, 6vw, 80px);
+    line-height: 0.98;
+    letter-spacing: -0.025em;
+  }
+  .problem h2 em{ font-style: normal; font-weight: 400; color: var(--dim); }
+  .problem h2 .accent{ color: var(--accent); font-style: normal; }
+  .problem .sub{
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(22px, 2vw, 28px);
+    color: var(--fg-2);
+    margin-top: 28px;
+  }
+  .problem-body p{ color: var(--fg-2); font-size: 17px; line-height: 1.7; margin: 0 0 20px; }
+  .problem-body p .hang{ color: var(--dim); font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; display:inline-block; width: 40px; vertical-align: top; margin-right: 6px; }
+  .problem-body .bang{
+    margin-top: 36px; padding: 28px; border-left: 2px solid var(--accent);
+    background: var(--bg-2);
+    font-size: 18px;
+  }
+  .problem-body .bang strong{ color: var(--accent); font-weight: 500; }
+
+  .counter{
+    display:grid; grid-template-columns: repeat(10, 1fr);
+    gap: 4px; margin: 40px 0 0;
+  }
+  .counter div{ height: 8px; background: var(--rule); }
+  .counter div:first-child{ background: var(--accent); }
+
+  /* ---------- curriculum ---------- */
+  .cur{ background: var(--bg-2); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .cur-head{ display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap: 24px; margin-bottom: 60px; }
+  .cur-head .lede{ max-width: 38ch; }
+  .modules{ display:grid; gap: 0; border-top: 1px solid var(--rule); }
+  .module{
+    display:grid; grid-template-columns: 90px 1fr 1.3fr;
+    gap: 48px;
+    padding: 48px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+    transition: background .25s ease;
+  }
+  .module:hover{ background: color-mix(in oklab, var(--accent-soft) 50%, transparent); }
+  .module .no{
+    font-family: var(--mono);
+    font-size: 13px; letter-spacing: 0.14em;
+    color: var(--accent);
+  }
+  .module .title{
+    font-family: var(--display);
+    font-size: clamp(26px, 2.6vw, 38px);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  .module .title .mi{ display:block; font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; color: var(--dim); text-transform: uppercase; margin-bottom: 10px; }
+  .module .desc{ color: var(--fg-2); font-size: 16px; line-height: 1.65; }
+  @media (max-width: 860px){ .module{ grid-template-columns: 1fr; gap: 16px; padding: 36px 0; } }
+
+  /* ---------- mentor ---------- */
+  .mentor{ background: var(--bg); }
+  .mentor-grid{ display:grid; grid-template-columns: 5fr 7fr; gap: 80px; align-items: start; }
+  @media (max-width: 980px){ .mentor-grid{ grid-template-columns: 1fr; gap: 40px; } }
+  .portrait{
+    aspect-ratio: 4/5;
+    background: var(--bg-3);
+    background-image:
+      repeating-linear-gradient(135deg, rgba(244,238,227,0.035) 0 2px, transparent 2px 10px),
+      linear-gradient(180deg, var(--bg-3), #0C0B09);
+    border: 1px solid var(--rule-2);
+    position: relative;
+    overflow: hidden;
+  }
+  .portrait > img{
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+  .portrait::before{
+    content: "PORTRAIT · RAHUL SRINIVAS"; position: absolute;
+    top: 16px; left: 16px;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
+    color: var(--fg);
+    mix-blend-mode: difference;
+    z-index: 3;
+  }
+  .portrait::after{
+    content: "FRAME 01 · 2026"; position: absolute;
+    bottom: 16px; right: 16px;
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.2em;
+    color: var(--fg);
+    mix-blend-mode: difference;
+    z-index: 3;
+  }
+  .portrait .ticks{
+    position: absolute; left: 50%; top: 50%;
+    width: 64px; height: 64px; transform: translate(-50%, -50%);
+    border: 1px solid rgba(255,255,255,0.35);
+    z-index: 2;
+  }
+  .portrait .ticks::before, .portrait .ticks::after{
+    content:""; position:absolute; background: var(--dim);
+  }
+  .portrait .ticks::before{ left:50%; top: -8px; bottom: -8px; width:1px; transform: translateX(-50%); }
+  .portrait .ticks::after{ top:50%; left: -8px; right: -8px; height:1px; transform: translateY(-50%); }
+
+  .mentor h2 .name{ color: var(--accent); font-style: normal; }
+  .mentor .role{ margin-top: 12px; color: var(--dim); font-family: var(--mono); font-size: 12px; letter-spacing: .16em; text-transform: uppercase; }
+  .mentor .bio p{ color: var(--fg-2); font-size: 17px; line-height: 1.7; margin: 20px 0 0; }
+  .mentor .bio p strong{ color: var(--fg); font-weight: 500; }
+
+  .stat-bar{
+    margin-top: 56px;
+    display:grid; grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+  }
+  .stat{
+    padding: 32px 24px;
+    border-right: 1px solid var(--rule);
+  }
+  .stat:last-child{ border-right: 0; }
+  .stat .n{
+    font-family: var(--display);
+    font-size: clamp(40px, 4.4vw, 68px);
+    line-height: 1;
+    color: var(--accent);
+    letter-spacing: -0.02em;
+  }
+  .stat .l{
+    margin-top: 14px;
+    font-family: var(--mono);
+    font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--dim);
+  }
+  @media (max-width: 860px){ .stat-bar{ grid-template-columns: repeat(2,1fr); } .stat:nth-child(2){ border-right:0 } .stat:nth-child(1),.stat:nth-child(2){ border-bottom:1px solid var(--rule);} }
+
+  /* ---------- who for ---------- */
+  .who{ background: var(--bg-2); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .who-head{ display:flex; align-items:flex-end; justify-content:space-between; flex-wrap:wrap; gap: 24px; margin-bottom: 52px; }
+  .who-grid{
+    display:grid; grid-template-columns: repeat(3, 1fr);
+    border-top: 1px solid var(--rule); border-left: 1px solid var(--rule);
+  }
+  @media (max-width: 880px){ .who-grid{ grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px){ .who-grid{ grid-template-columns: 1fr; } }
+  .who-cell{
+    padding: 32px;
+    border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    min-height: 200px;
+    display: flex; flex-direction: column; gap: 16px;
+  }
+  .check{
+    width: 28px; height: 28px;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    display: inline-flex; align-items: center; justify-content: center;
+    font-family: var(--mono); font-size: 14px;
+  }
+  .who-cell p{ margin: 0; color: var(--fg); font-size: 17px; line-height: 1.5; }
+  .who-cell p strong{ font-weight: 500; }
+
+  .warn{
+    margin-top: 48px;
+    border: 1px solid color-mix(in oklab, var(--warn) 60%, var(--rule));
+    padding: 32px;
+    background: color-mix(in oklab, var(--warn) 8%, var(--bg));
+    display:grid; grid-template-columns: 56px 1fr; gap: 24px;
+    align-items: start;
+  }
+  .warn .badge{
+    width: 56px; height: 56px;
+    display: inline-flex; align-items: center; justify-content: center;
+    border: 1.5px solid var(--warn); color: var(--warn);
+    font-family: var(--mono); font-size: 13px; letter-spacing: 0.1em;
+    transform: rotate(-3deg);
+  }
+  .warn h4{ font-family: var(--mono); font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--warn); margin-bottom: 10px; }
+  .warn p{ margin: 0; color: var(--fg-2); font-size: 16px; line-height: 1.6; }
+  @media (max-width: 560px){ .warn{ grid-template-columns: 1fr; } }
+
+  /* ---------- social proof ---------- */
+  .proof{ background: var(--bg); }
+  .proof-head{ text-align: left; max-width: 780px; margin-bottom: 72px; }
+  .tgrid{
+    display:grid; grid-template-columns: 1fr 1fr; gap: 2px;
+    background: var(--rule);
+    border: 1px solid var(--rule);
+  }
+  @media (max-width: 780px){ .tgrid{ grid-template-columns: 1fr; } }
+  .t{
+    background: var(--bg); padding: 40px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    min-height: 320px;
+  }
+  .t .q{
+    font-family: var(--display);
+    font-size: clamp(22px, 1.9vw, 26px);
+    line-height: 1.35;
+    color: var(--fg);
+    letter-spacing: -0.005em;
+  }
+  .t .q::before{
+    content: "“"; font-family: var(--display); color: var(--accent);
+    font-size: 1.4em; line-height: 0; margin-right: 4px; vertical-align: -0.2em;
+  }
+  .t .who-line{
+    margin-top: 32px; display:flex; align-items:center; gap: 14px;
+    font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--dim);
+  }
+  .t .avatar{
+    width: 36px; height: 36px; border-radius: 50%;
+    background: var(--bg-3);
+    border: 1px solid var(--rule-2);
+    display:inline-flex; align-items:center; justify-content:center;
+    color: var(--accent); font-family: var(--mono); font-size: 12px;
+  }
+
+  /* ---------- logistics ---------- */
+  .logi{ background: var(--bg-2); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
+  .info-grid{
+    display:grid; grid-template-columns: repeat(4, 1fr);
+    border: 1px solid var(--rule);
+    margin-top: 56px;
+  }
+  @media (max-width: 880px){ .info-grid{ grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 560px){ .info-grid{ grid-template-columns: 1fr; } }
+  .info{
+    padding: 32px; border-right: 1px solid var(--rule);
+    display:flex; flex-direction: column; gap: 14px;
+    min-height: 210px;
+  }
+  .info:last-child{ border-right: 0; }
+  @media (max-width: 880px){
+    .info{ border-bottom: 1px solid var(--rule); }
+    .info:nth-child(2){ border-right: 0; }
+    .info:nth-last-child(-n+2){ border-bottom: 0; }
+  }
+  .info .icon{
+    width: 36px; height: 36px;
+    border: 1px solid var(--accent);
+    display:inline-flex; align-items:center; justify-content:center;
+    color: var(--accent); font-family: var(--mono); font-size: 13px;
+  }
+  .info h4{
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim);
+  }
+  .info .big{
+    font-family: var(--display); font-size: clamp(22px, 2vw, 28px); line-height: 1.15; color: var(--fg);
+  }
+  .info .note{ color: var(--dim); font-size: 14px; line-height: 1.5; }
+
+  /* ---------- bonus ---------- */
+  .bonus{ background: var(--bg); }
+  .bonus-grid{
+    display:grid; grid-template-columns: 5fr 7fr; gap: 80px; align-items: start;
+  }
+  @media (max-width: 980px){ .bonus-grid{ grid-template-columns: 1fr; gap: 48px; } }
+  .bstack{ display:grid; gap: 0; border-top: 1px solid var(--rule); }
+  .bonus-row{
+    display:grid; grid-template-columns: 40px 1fr auto; gap: 24px;
+    padding: 28px 0; border-bottom: 1px solid var(--rule);
+    align-items: center;
+  }
+  .bonus-row .no{ font-family: var(--mono); font-size: 12px; color: var(--dim); letter-spacing: 0.14em; }
+  .bonus-row .ttl{ font-family: var(--display); font-size: clamp(20px, 1.8vw, 24px); line-height: 1.2; }
+  .bonus-row .ttl .sub{ display:block; color: var(--dim); font-family: var(--sans); font-size: 14px; margin-top: 6px; line-height: 1.5; }
+  .bonus-row .val{
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent);
+  }
+  @media (max-width: 560px){ .bonus-row{ grid-template-columns: 30px 1fr; } .bonus-row .val{ grid-column: 2; } }
+
+  .countdown{
+    margin-top: 48px;
+    border: 1px solid var(--rule-2);
+    padding: 28px;
+    display:flex; flex-direction: column; gap: 20px;
+  }
+  .countdown .label{
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim);
+  }
+  .cd-grid{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+  .cd{
+    padding: 20px 14px;
+    background: var(--bg-2);
+    border: 1px solid var(--rule);
+    text-align:center;
+  }
+  .cd .n{
+    font-family: var(--display); font-size: clamp(34px, 4vw, 54px); color: var(--accent); line-height: 1; letter-spacing: -0.01em;
+  }
+  .cd .u{ margin-top: 8px; font-family: var(--mono); font-size: 10.5px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--dim); }
+
+  .seat-bar{
+    margin-top: 24px;
+    display:flex; flex-direction: column; gap: 10px;
+    font-family: var(--mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+  }
+  .seat-bar .t{ display:flex; justify-content: space-between; color: var(--dim); background: transparent; padding: 0; min-height: 0; }
+  .seat-bar .track{
+    height: 4px; background: var(--rule);
+    position: relative; overflow: hidden;
+  }
+  .seat-bar .fill{
+    position: absolute; inset: 0 auto 0 0;
+    width: 78%;
+    background: linear-gradient(90deg, var(--accent) 0%, color-mix(in oklab, var(--accent) 60%, var(--bg)));
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq{ background: var(--bg-2); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+  .faq-list{ border-top: 1px solid var(--rule); margin-top: 48px; }
+  details{ border-bottom: 1px solid var(--rule); padding: 24px 0; }
+  details summary{
+    list-style: none; cursor: pointer;
+    display:grid; grid-template-columns: 52px 1fr 24px; align-items:center;
+    gap: 20px;
+    font-family: var(--display);
+    font-size: clamp(22px, 2vw, 28px);
+    line-height: 1.25;
+    color: var(--fg);
+  }
+  details summary::-webkit-details-marker{ display:none; }
+  details .q-no{
+    font-family: var(--mono); font-size: 12px; letter-spacing: 0.14em; color: var(--accent);
+  }
+  details .chev{
+    font-family: var(--mono); color: var(--dim);
+    transition: transform .2s ease;
+  }
+  details[open] .chev{ transform: rotate(45deg); color: var(--accent); }
+  details .a{
+    margin: 18px 0 0 72px;
+    color: var(--fg-2);
+    font-size: 16px; line-height: 1.7;
+    max-width: 72ch;
+  }
+  details .a strong{ color: var(--fg); font-weight: 500; }
+  @media (max-width: 560px){ details summary{ grid-template-columns: 40px 1fr 20px; } details .a{ margin-left: 0; } }
+
+  /* ---------- final CTA ---------- */
+  .final{
+    position: relative; overflow: hidden;
+    background: var(--bg);
+    padding: 160px 0;
+  }
+  .final::before{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse at 50% 100%, color-mix(in oklab, var(--accent) 20%, transparent) 0%, transparent 60%);
+    pointer-events:none;
+  }
+  .final-inner{ position: relative; text-align: center; }
+  .final h2{
+    font-family: var(--display);
+    font-size: clamp(48px, 7.5vw, 120px);
+    line-height: 0.98; letter-spacing: -0.02em;
+    max-width: 16ch; margin: 0 auto;
+  }
+  .final h2 em{ font-style: normal; color: var(--dim); }
+  .final-body{
+    max-width: 52ch; margin: 40px auto 0;
+    color: var(--fg-2); font-size: 18px; line-height: 1.7;
+  }
+  .final-body .big-num{
+    font-family: var(--display); font-size: 1.2em; color: var(--accent); font-style: normal;
+  }
+  .final .cta-wrap{ margin-top: 48px; display:flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .final-trust{ margin-top: 32px; color: var(--dim); font-family: var(--mono); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; }
+
+  /* ---------- brand story ---------- */
+  .brand-story{
+    background: var(--bg);
+    position: relative;
+    overflow: hidden;
+  }
+  .brand-story::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 95% 35%, color-mix(in oklab, var(--accent) 14%, transparent), transparent 55%);
+    pointer-events: none;
+  }
+  .brand-grid{
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: 80px;
+    align-items: center;
+    position: relative;
+  }
+  @media (max-width: 980px){
+    .brand-grid{ grid-template-columns: 1fr; gap: 56px; }
+  }
+  .brand-title{
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(48px, 7vw, 104px);
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    text-transform: uppercase;
+  }
+  .brand-sub{
+    margin-top: 18px;
+    color: var(--accent);
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+  }
+  .brand-body{
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .brand-body p{
+    color: var(--fg-2);
+    font-size: 18px;
+    line-height: 1.65;
+    margin: 0;
+    max-width: 44ch;
+  }
+  .brand-body p strong{ color: var(--fg); font-weight: 500; }
+  .brand-body .mission{
+    font-family: var(--display);
+    font-size: clamp(22px, 2vw, 28px);
+    color: var(--fg);
+    font-weight: 600;
+  }
+  .brand-body .mission .accent{ color: var(--accent); }
+
+  .brand-card{
+    position: relative;
+    padding: 48px 48px 0;
+    border: 1px solid var(--rule-2);
+    background:
+      linear-gradient(160deg, color-mix(in oklab, var(--accent) 14%, var(--bg-2)) 0%, var(--bg-2) 70%);
+    overflow: hidden;
+  }
+  .brand-card::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 100% 0%, color-mix(in oklab, var(--accent) 22%, transparent), transparent 55%);
+    pointer-events: none;
+  }
+  .brand-card > *{ position: relative; z-index: 1; }
+  .bstat + .bstat{ margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--rule-2); }
+  .bstat-n{
+    font-family: var(--display);
+    font-size: clamp(44px, 5vw, 72px);
+    color: var(--accent);
+    line-height: 1;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+  .bstat-n span{ font-size: 0.55em; color: var(--fg-2); }
+  .bstat-l{
+    margin-top: 12px;
+    color: var(--fg-2);
+    font-size: 16px;
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .roster{
+    margin-top: 40px;
+    padding-top: 32px;
+    border-top: 1px solid var(--rule-2);
+  }
+  .roster-head{
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--dim);
+    margin-bottom: 20px;
+  }
+  .roster-collage{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 8px;
+    margin-bottom: 0;
+    mix-blend-mode: screen;
+  }
+  @media (max-width: 560px){
+    .brand-card{ padding: 32px 32px 0; }
+  }
+
+  /* ---------- footer ---------- */
+  footer{
+    border-top: 1px solid var(--rule);
+    padding: 48px 0 64px;
+    color: var(--dim);
+    font-family: var(--mono);
+    font-size: 11.5px; letter-spacing: 0.14em; text-transform: uppercase;
+  }
+  footer .row{
+    display:flex; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+    align-items: center;
+  }
+  footer a:hover{ color: var(--fg); }
+  footer nav{ display:flex; gap: 28px; flex-wrap: wrap; }
+
+  /* ---------- utility ---------- */
+  .small{ font-size: 14px; color: var(--dim); }
+
+
+  /* mono-thin-override */
+  .eyebrow, .section-num, .micro, .topbar-inner, .hero-tag,
+  .detail-card h4, .cta-trust, .marquee, .marquee-track,
+  .module .no, .module .title .mi,
+  .role,
+  .stat .l,
+  .who-line, .avatar,
+  .info h4, .info .icon,
+  .bonus-row .no, .bonus-row .val,
+  .countdown .label, .cd .u, .seat-bar, .seat-bar .t,
+  details .q-no, details .chev,
+  .final-trust,
+  footer,
+  .btn, .hang, .warn .badge, .warn h4,
+  .problem-body p .hang{
+    font-family: var(--mono);
+    font-weight: 100;
+  }
+</style>
+</head>
+<body data-cc-id="cc-1" style="cursor: crosshair; background-color: rgb(8, 8, 8);">
+
+<!-- ============ TOP BAR ============ -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand">
+      <img src="assets/levelup-logo.png" alt="Level Up Learning" style="height:28px; width:auto; display:block;">
+    </div>
+    <nav>
+      <a href="#curriculum">Curriculum</a>
+      <a href="#mentor">Mentor</a>
+      <a href="#logistics">Logistics</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <span class="live">Live · Seats filling</span>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" data-screen-label="01 Hero">
+  <div class="filmstrip" aria-hidden="true">
+    <div class="edge left"></div>
+    <div class="edge right"></div>
+  </div>
+  <div class="wrap hero-inner">
+      <span class="hero-tag">
+      <span class="pin">●</span>
+      <span>Free 2-Hour Live Masterclass</span>
+      <span class="divider"></span>
+      <span>Hosted Online</span>
+    </span>
+
+    <h1>
+      How to <span class="accent">start</span><br>
+      your filmmaking<br>
+      career in <em>2026.</em>
+    </h1>
+
+    <div class="hero-grid">
+      <div>
+        <p class="hero-sub">
+          A 2-hour live session and learn the exact path professional filmmakers are using today, even if you've never picked up a camera.
+        </p>
+        <div class="cta-block">
+          <a href="#register" class="btn btn-primary btn-lg">
+            Enroll Now
+            <span class="arrow">→</span>
+          </a>
+          <div class="cta-trust">Limited to 500 seats per session · No prior experience required</div>
+        </div>
+      </div>
+
+      <aside class="detail-card">
+        <h4>Session Details</h4>
+        <ul class="detail-list">
+          <li>
+            <span class="k">01</span>
+            <span class="v"><strong>Sat, 08 Feb 2026</strong><div class="tiny">Saturday evening</div></span>
+          </li>
+          <li>
+            <span class="k">02</span>
+            <span class="v"><strong>7:00 – 9:00 PM IST</strong><div class="tiny">+ 15 min live Q&amp;A</div></span>
+          </li>
+          <li>
+            <span class="k">03</span>
+            <span class="v"><strong>Live on Zoom</strong><div class="tiny">Link sent day before</div></span>
+          </li>
+          <li>
+            <span class="k">04</span>
+            <span class="v"><strong>Bonus stack · ₹14,900 value</strong><div class="tiny">Yours on registration</div></span>
+          </li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Level Up Learning <span class="star">✦</span> India's Largest Filmmaking Community <span class="star">✦</span> 3,00,000+ Members <span class="star">✦</span> 60,000+ Students Trained <span class="star">✦</span> 100+ Feature Films <span class="star">✦</span> 1,000+ Short Films <span class="star">✦</span> Masterclasses with Karthik Subbaraj &amp; Lokesh Kanagaraj <span class="star">✦</span></span>
+      <span>Level Up Learning <span class="star">✦</span> India's Largest Filmmaking Community <span class="star">✦</span> 3,00,000+ Members <span class="star">✦</span> 60,000+ Students Trained <span class="star">✦</span> 100+ Feature Films <span class="star">✦</span> 1,000+ Short Films <span class="star">✦</span> Masterclasses with Karthik Subbaraj &amp; Lokesh Kanagaraj <span class="star">✦</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROBLEM ============ -->
+<section class="problem section" data-screen-label="02 Problem">
+  <div class="wrap problem-inner">
+    <div>
+      <div class="section-num">The Pattern</div>
+      <h2>
+        <em>100 people say</em><br>
+        <span class="accent">"I want to make a film."</span><br>
+        <em>Only</em> 1 <em>actually does.</em>
+      </h2>
+      <div class="sub">Which one are you?</div>
+
+      <div class="counter" aria-hidden="true">
+        <div></div><div></div><div></div><div></div><div></div>
+        <div></div><div></div><div></div><div></div><div></div>
+      </div>
+      <div class="micro" style="margin-top:14px">1 of 100 registrants finish a film within 12 months.</div>
+    </div>
+
+    <div class="problem-body">
+      <p><span class="hang">IF</span>you've been watching YouTube tutorials for months but never shot a frame…</p>
+      <p><span class="hang">IF</span>you dreamed of film school but the ₹8–12 lakh price tag killed it…</p>
+      <p><span class="hang">IF</span>you have stories in your head but no one around you takes "filmmaking" seriously…</p>
+      <p><span class="hang">IF</span>you've been waiting for the "right time," the "right camera," or the "right connections"…</p>
+
+      <div class="bang">
+        You're not alone. You're in the 99. And the reason you're stuck isn't laziness. It isn't lack of talent. It's a <strong>system</strong> that was designed to keep you out.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CURRICULUM ============ -->
+<section class="cur section" id="curriculum" data-screen-label="03 Curriculum">
+  <div class="wrap">
+    <div class="cur-head">
+      <div>
+        <div class="section-num">The Curriculum</div>
+        <h2 class="h2">What you'll learn<br><em>in two hours.</em></h2>
+      </div>
+      <p class="lede">Five modules. One working framework. No fluff. Here's the exact map of what gets taught, in order.</p>
+    </div>
+
+    <div class="modules">
+
+      <div class="module">
+        <div class="no">MODULE 1</div>
+        <div>
+          <div class="title"><span class="mi">Landscape</span>The New Filmmaking Landscape</div>
+        </div>
+        <div class="desc">Understand the shifts of the last 5 years most aspiring filmmakers still don't know about. Why OTT, regional content, and the creator economy have completely changed what it means to "get into films."</div>
+      </div>
+
+      <div class="module">
+        <div class="no">MODULE 2</div>
+        <div>
+          <div class="title"><span class="mi">Pathways</span>The 5 Doors Into Filmmaking</div>
+        </div>
+        <div class="desc">Most people think there's only one path: become a director. There are actually five doors into this industry, and most of them don't require you to move to Mumbai or spend 4 years in film school. We walk through each and help you identify which fits your life right now.</div>
+      </div>
+
+      <div class="module">
+        <div class="no">MODULE 3</div>
+        <div>
+          <div class="title"><span class="mi">Workflow</span>How a Short Film Actually Gets Made</div>
+        </div>
+        <div class="desc">Forget the "vibes and vision" myth. Using a scene from a film you already love as the case study, we break down the end-to-end workflow: the 7 pre-production documents, the shot list, the schedule and the budget breakdown that turn an idea into an actual film.</div>
+      </div>
+
+      <div class="module">
+        <div class="no">MODULE 4</div>
+        <div>
+          <div class="title"><span class="mi">Craft</span>The 5 Craft Layers Every Great Scene Uses</div>
+        </div>
+        <div class="desc">Writing. Directing. Cinematography. Editing. Sound. We take one 60-second scene and show you the 30+ deliberate creative decisions hidden inside it. This is the difference between watching films and understanding films.</div>
+      </div>
+
+      <div class="module">
+        <div class="no">MODULE 5</div>
+        <div>
+          <div class="title"><span class="mi">Plan</span>Your Next 30 Days</div>
+        </div>
+        <div class="desc">You won't leave this session with a to-do list. You'll leave with a plan. A clear, week-by-week action map for the next 30 days to go from <em>"I want to make a film"</em> to <em>"I'm making a film."</em></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ MENTOR ============ -->
+<section class="mentor section" id="mentor" data-screen-label="04 Mentor">
+  <div class="wrap mentor-grid">
+    <div class="portrait" aria-label="Portrait of Rahul Srinivas">
+      <img src="assets/rahul-portrait.png" alt="Rahul Srinivas">
+      <div class="ticks"></div>
+    </div>
+
+    <div>
+      <div class="section-num">The Mentor</div>
+      <h2 class="h2">Meet <span class="name">Rahul Srinivas.</span></h2>
+      <div class="role">Founder · Level Up Learning · Writer · Creative Director · Producer</div>
+
+      <div class="bio">
+        <p>Rahul has spent the last decade doing something no one else has done in India, building a platform where aspiring filmmakers actually break into the industry, without a film school degree or family connections.</p>
+        <p>Under his leadership, Level Up Learning has grown into <strong>India's largest filmmaking community</strong>, with 3,00,000+ members, 60,000+ students trained, 100+ feature films and 1,000+ short films credited to its alumni.</p>
+        <p>He has personally hosted masterclasses with some of the most acclaimed names in Indian cinema, including <strong>Karthik Subbaraj</strong> and <strong>Lokesh Kanagaraj</strong>, and has directly taught over <strong>2,100 filmmakers</strong> now working across OTT, advertising and independent cinema.</p>
+        <p>In this session, Rahul is distilling everything he's learned from the last 10 years: what actually works in 2026, what doesn't, and what aspiring filmmakers keep getting wrong.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap" style="margin-top: 40px;">
+    <div class="stat-bar">
+      <div class="stat"><div class="n">3,00,000<span style="color:var(--fg-2); font-size:0.55em; letter-spacing:-0.02em">+</span></div><div class="l">Community Members</div></div>
+      <div class="stat"><div class="n">60,000<span style="color:var(--fg-2); font-size:0.55em">+</span></div><div class="l">Students Trained</div></div>
+      <div class="stat"><div class="n">100<span style="color:var(--fg-2); font-size:0.55em">+</span></div><div class="l">Feature Films · Alumni</div></div>
+      <div class="stat"><div class="n">1,000<span style="color:var(--fg-2); font-size:0.55em">+</span></div><div class="l">Short Films · Alumni</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHO IS IT FOR ============ -->
+<section class="who section" data-screen-label="05 Who">
+  <div class="wrap">
+    <div class="who-head">
+      <div>
+        <div class="section-num">Audience</div>
+        <h2 class="h2">Is this masterclass<br><em>for you?</em></h2>
+      </div>
+      <p class="lede">Built for people who are serious about filmmaking, whether you're starting from zero or have been trying on your own for years.</p>
+    </div>
+
+    <div class="who-grid">
+      <div class="who-cell">
+        <span class="check">✓</span>
+        <p>You <strong>dream of making films</strong> but don't know where to start.</p>
+      </div>
+      <div class="who-cell">
+        <span class="check">✓</span>
+        <p>You've been <strong>watching tutorials for months</strong> but haven't made anything yet.</p>
+      </div>
+      <div class="who-cell">
+        <span class="check">✓</span>
+        <p>You <strong>considered film school</strong> but the cost put it out of reach.</p>
+      </div>
+      <div class="who-cell">
+        <span class="check">✓</span>
+        <p>You have <strong>stories in your head</strong> but no crew, no collaborators, no one to make them with.</p>
+      </div>
+      <div class="who-cell">
+        <span class="check">✓</span>
+        <p>You're already in a career (<strong>engineer, doctor, marketer, student</strong>), but filmmaking is the thing you actually want to do.</p>
+      </div>
+      <div class="who-cell">
+        <span class="check">✓</span>
+        <p>You've been <strong>creating content</strong> on Instagram or YouTube and want to take the leap to actual filmmaking.</p>
+      </div>
+    </div>
+
+    <div class="warn">
+      <div class="badge">NOT<br>FOR</div>
+      <div>
+        <h4>⚠ This is NOT for you if…</h4>
+        <p>You're looking for a magic shortcut or a "become a filmmaker in 7 days" hack. This session respects your time, which means we're going to tell you the truth, and the truth requires work.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BRAND STORY ============ -->
+<section class="brand-story section" data-screen-label="06 Brand">
+  <div class="wrap brand-grid">
+    <div>
+      <div class="section-num">The Community</div>
+      <h2 class="brand-title">LevelUp<br>Learning.</h2>
+      <div class="brand-sub">India's Largest Filmmaking Community</div>
+
+      <div class="brand-body">
+        <p>LevelUp Learning is more than a platform, <strong>it's a community.</strong></p>
+        <p class="mission">Our <span class="accent">mission?</span></p>
+        <p>To make learning <strong>simple, affordable, and engaging</strong> by working with the finest minds in India to bring their expertise directly to our students.</p>
+      </div>
+    </div>
+
+    <aside class="brand-card">
+      <div class="bstat">
+        <div class="bstat-n">3,00,000<span>+</span></div>
+        <div class="bstat-l">Community Members</div>
+      </div>
+      <div class="bstat">
+        <div class="bstat-n">60,000<span>+</span></div>
+        <div class="bstat-l">Students Trained</div>
+      </div>
+
+      <div class="roster">
+        <div class="roster-head">Masterclasses hosted with</div>
+        <img class="roster-collage" src="assets/filmmakers-collage.png" alt="Filmmakers who have hosted masterclasses with Level Up Learning: Lokesh Kanagaraj, DRK Kiran, Ravi Basrur, G Venket Ram, Karthik Subbaraj, Anthony Gonsalvez">
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ SOCIAL PROOF ============ -->
+<section class="proof section" data-screen-label="07 Proof">
+  <div class="wrap">
+    <div class="proof-head">
+      <div class="section-num">Hear What They Say</div>
+      <h2 class="h2">You're not the first<br><em>to show up here.</em></h2>
+      <p class="lede" style="margin-top: 24px;">Over 25,000 aspiring filmmakers have learned from Rahul and the Level Up community. Here's what some of them said.</p>
+    </div>
+
+    <div class="tgrid">
+      <div class="t">
+        <div class="q">Before this, filmmaking felt too big and out of reach. But the way the concepts were taught made it feel possible, and even exciting. I finally feel confident to start working on my own ideas.</div>
+        <div class="who-line"><span class="avatar">V</span> Vikram D. · Aspiring Filmmaker</div>
+      </div>
+      <div class="t">
+        <div class="q">What I loved most was the honesty. No sugar-coating, just real insights from people who've been there. It gave me a clear picture of what it actually takes to be in the industry.</div>
+        <div class="who-line"><span class="avatar">S</span> Sneha P. · Visual Storytelling Enthusiast</div>
+      </div>
+      <div class="t">
+        <div class="q">I was about to pursue a 1-year filmmaking diploma, but my parents weren't allowing me to quit my job. That's when I found Level Up. I had a great experience and gained so much knowledge about cinema. At the end of the day I feel complete.</div>
+        <div class="who-line"><span class="avatar">S</span> Sudhan Maaran · Student</div>
+      </div>
+      <div class="t">
+        <div class="q">The most valuable thing is the insider, current-day view on how things work in the industry today, something you simply cannot find anywhere else online. The teachers were highly knowledgeable. Great course curation.</div>
+        <div class="who-line"><span class="avatar">N</span> Neeraj Mohan · IT Professional</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LOGISTICS ============ -->
+<section class="logi section" id="logistics" data-screen-label="07 Logistics">
+  <div class="wrap">
+    <div class="section-num">The Masterclass</div>
+    <h2 class="h2" style="max-width: 18ch">Here's everything<br><em>you need to know.</em></h2>
+    <p class="lede" style="margin-top: 24px;">The masterclass is <strong style="color:var(--accent); font-weight: 500;">completely free</strong>. All we need is your commitment to show up live.</p>
+
+    <div class="info-grid">
+      <div class="info">
+        <span class="icon">◷</span>
+        <h4>When</h4>
+        <div class="big">Sat · 08 Feb 2026</div>
+        <div class="note">Saturday · 7:00 PM IST</div>
+      </div>
+      <div class="info">
+        <span class="icon">▷</span>
+        <h4>Duration</h4>
+        <div class="big">2 hours live</div>
+        <div class="note">+ 15 min live Q&amp;A</div>
+      </div>
+      <div class="info">
+        <span class="icon">◉</span>
+        <h4>Where</h4>
+        <div class="big">Live on Zoom</div>
+        <div class="note">Link sent to email + WhatsApp the day before.</div>
+      </div>
+      <div class="info">
+        <span class="icon">₹</span>
+        <h4>Cost</h4>
+        <div class="big">Free.</div>
+        <div class="note">No credit card. No hidden fees. No trial periods.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BONUS + REGISTER ============ -->
+<section class="bonus section" id="register" data-screen-label="08 Bonus">
+  <div class="wrap bonus-grid">
+    <div>
+      <div class="section-num">Bonus</div>
+      <h2 class="h2">The bonus stack.<br><em>Yours the moment you register.</em></h2>
+      <p class="lede" style="margin-top: 24px;">Four assets you'll actually use in the next 30 days: worksheets, frameworks and community access. Delivered right after the session.</p>
+
+      <div class="countdown" role="timer" aria-label="Registration countdown">
+        <div class="label">⏳ Registration closes in</div>
+        <div class="cd-grid">
+          <div class="cd"><div class="n" data-cd="d">02</div><div class="u">Days</div></div>
+          <div class="cd"><div class="n" data-cd="h">14</div><div class="u">Hours</div></div>
+          <div class="cd"><div class="n" data-cd="m">29</div><div class="u">Min</div></div>
+          <div class="cd"><div class="n" data-cd="s">38</div><div class="u">Sec</div></div>
+        </div>
+        <div class="seat-bar">
+          <div class="t"><span>Seats taken</span><span>389 / 500</span></div>
+          <div class="track"><div class="fill"></div></div>
+          <div class="t" style="color:var(--accent)"><span>111 remaining</span><span>Free · No spam</span></div>
+        </div>
+        <a href="#" class="btn btn-primary btn-lg" style="margin-top: 4px;">Reserve My Free Seat Now <span class="arrow">→</span></a>
+      </div>
+    </div>
+
+    <div class="bstack">
+      <div class="bonus-row">
+        <div class="no">B / 01</div>
+        <div class="ttl">Live 2-Hour Masterclass with Rahul Srinivas<span class="sub">Industry insights you won't find on YouTube.</span></div>
+        <div class="val">Included</div>
+      </div>
+      <div class="bonus-row">
+        <div class="no">B / 02</div>
+        <div class="ttl">The 2026 Filmmaker's Action Map (PDF)<span class="sub">Your week-by-week plan for the next 30 days, sent right after the session.</span></div>
+        <div class="val">₹2,900 value</div>
+      </div>
+      <div class="bonus-row">
+        <div class="no">B / 03</div>
+        <div class="ttl">The "5 Doors" Decision Framework<span class="sub">A worksheet to identify which path into filmmaking fits your life, skills and goals.</span></div>
+        <div class="val">₹1,900 value</div>
+      </div>
+      <div class="bonus-row">
+        <div class="no">B / 04</div>
+        <div class="ttl">Access to the Level Up Community (Lifetime)<span class="sub">Join 3,00,000+ aspiring and working filmmakers across India.</span></div>
+        <div class="val">₹9,900 value</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq section" id="faq" data-screen-label="09 FAQ">
+  <div class="wrap-narrow">
+    <div class="section-num">Questions</div>
+    <h2 class="h2">Questions you<br><em>might have.</em></h2>
+
+    <div class="faq-list">
+      <details open="">
+        <summary><span class="q-no">Q / 01</span><span>Is this actually free? What's the catch?</span><span class="chev">+</span></summary>
+        <div class="a">Yes, it's genuinely free. No catch, no trial, no credit card required. We offer this masterclass free because we know the Indian filmmaking space is full of people with real talent who've been gatekept by cost. This is our way of opening the first door. We do run a paid advanced program for those who want to go deeper (we'll mention it briefly at the end), but the 2 hours of teaching are yours, no strings attached.</div>
+      </details>
+      <details>
+        <summary><span class="q-no">Q / 02</span><span>Do I need any filmmaking experience to join?</span><span class="chev">+</span></summary>
+        <div class="a">Not at all. This session is designed for people starting from zero. We've deliberately built it so a complete beginner can follow along, and so an intermediate filmmaker can still pick up frameworks they've never seen applied this way.</div>
+      </details>
+      <details>
+        <summary><span class="q-no">Q / 03</span><span>I don't have a camera. Can I still benefit?</span><span class="chev">+</span></summary>
+        <div class="a">Yes. In fact, a big part of this session is showing you how filmmakers today are making industry-grade work on phones. You don't need to buy anything before, during, or after this masterclass to start making films.</div>
+      </details>
+      <details>
+        <summary><span class="q-no">Q / 04</span><span>Will the session be recorded? Can I watch later?</span><span class="chev">+</span></summary>
+        <div class="a">Yes. All registered attendees get access to the recording for <strong>72 hours</strong> after the session. That said, we strongly recommend attending live. The Q&amp;A segment is where most people get their most valuable questions answered, and that experience simply doesn't translate to a recording.</div>
+      </details>
+      <details>
+        <summary><span class="q-no">Q / 05</span><span>How is this different from free YouTube content?</span><span class="chev">+</span></summary>
+        <div class="a">YouTube teaches you techniques. This session teaches you a <strong>career path</strong>: how the Indian filmmaking industry actually works in 2026, which doors are open, which are closed, and how real people with real jobs and real constraints are breaking in right now. That's an insider perspective you can't find in a tutorial.</div>
+      </details>
+      <details>
+        <summary><span class="q-no">Q / 06</span><span>Who is this NOT for?</span><span class="chev">+</span></summary>
+        <div class="a">Honestly, this isn't for people looking for a "become a filmmaker in 7 days" shortcut. Filmmaking takes real work. What we can give you is a clear map. The rest is up to you.</div>
+      </details>
+      <details>
+        <summary><span class="q-no">Q / 07</span><span>What language will the session be in?</span><span class="chev">+</span></summary>
+        <div class="a">The masterclass will be conducted in English, with Rahul occasionally using Indian references and regional industry examples. If you understand conversational English, you're fully equipped.</div>
+      </details>
+      <details>
+        <summary><span class="q-no">Q / 08</span><span>I'm not from India, can I still join?</span><span class="chev">+</span></summary>
+        <div class="a">Absolutely. While many of our case studies are from Indian cinema, the principles (the 5 doors, the short film workflow, the craft layers) apply universally. We've had participants from 40+ countries.</div>
+      </details>
+      <details>
+        <summary><span class="q-no">Q / 09</span><span>What if I still have questions after registering?</span><span class="chev">+</span></summary>
+        <div class="a">Once you register, you'll be added to a WhatsApp group where you can ask anything before the session. Our team and community members will be there to help.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final" data-screen-label="10 Final">
+  <div class="wrap-narrow final-inner">
+    <div class="section-num" style="justify-content:center; display:flex">The Decision</div>
+    <h2><em>You came here</em><br>for a <span style="color:var(--accent); font-style: normal;">reason.</span></h2>
+    <div class="final-body">
+      <p>Maybe you've been thinking about this for years. Maybe it hit you last week.</p>
+      <p>Either way, <span class="big-num">100</span> people will read this page today. <span class="big-num">99</span> of them will close it and go back to telling themselves <em>"someday."</em></p>
+      <p><span class="big-num">1</span> will register.</p>
+      <p style="margin-top: 24px; font-family: var(--display); font-size: 1.35em; font-style: normal; color: var(--fg);">Which one are you?</p>
+    </div>
+    <div class="cta-wrap">
+      <a href="#register" class="btn btn-primary btn-lg">Reserve My Free Seat <span class="arrow">→</span></a>
+      <a href="#curriculum" class="btn btn-ghost btn-lg">Review the Curriculum</a>
+    </div>
+    <div class="final-trust">The session is in 2 days · Seats are limited · The decision is yours</div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="wrap">
+    <div class="row">
+      <div class="brand" style="color: var(--fg);">
+        <img src="assets/levelup-logo.png" alt="Level Up Learning" style="height:32px; width:auto; display:block;">
+      </div>
+      <nav>
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">Refund &amp; Cancellation</a>
+        <a href="#">Contact</a>
+      </nav>
+      <div>© 2026 · All rights reserved</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Simple countdown, counts down to ~2.5 days from load
+  (function(){
+    const target = Date.now() + (2*24 + 14)*3600*1000 + 32*60*1000;
+    const pad = n => String(n).padStart(2,'0');
+    const d = document.querySelector('[data-cd="d"]');
+    const h = document.querySelector('[data-cd="h"]');
+    const m = document.querySelector('[data-cd="m"]');
+    const s = document.querySelector('[data-cd="s"]');
+    function tick(){
+      let diff = Math.max(0, target - Date.now());
+      const days = Math.floor(diff/86400000); diff -= days*86400000;
+      const hrs = Math.floor(diff/3600000); diff -= hrs*3600000;
+      const mins = Math.floor(diff/60000); diff -= mins*60000;
+      const secs = Math.floor(diff/1000);
+      if(d) d.textContent = pad(days);
+      if(h) h.textContent = pad(hrs);
+      if(m) m.textContent = pad(mins);
+      if(s) s.textContent = pad(secs);
+    }
+    tick(); setInterval(tick, 1000);
+  })();
+</script>
+
+
+
+</body></html>
