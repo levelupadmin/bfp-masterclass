@@ -849,6 +849,40 @@
   footer a:hover{ color: var(--fg); }
   footer nav{ display:flex; gap: 28px; flex-wrap: wrap; }
 
+  /* ---------- reveal on scroll ---------- */
+  .reveal{
+    opacity: 0;
+    transform: translateY(28px);
+    transition:
+      opacity 900ms cubic-bezier(0.16, 1, 0.3, 1),
+      transform 900ms cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+  .reveal.in-view{
+    opacity: 1;
+    transform: none;
+  }
+  .reveal-child{
+    opacity: 0;
+    transform: translateY(20px);
+    transition:
+      opacity 800ms cubic-bezier(0.16, 1, 0.3, 1),
+      transform 800ms cubic-bezier(0.16, 1, 0.3, 1);
+    transition-delay: var(--reveal-delay, 0ms);
+    will-change: opacity, transform;
+  }
+  .reveal.in-view .reveal-child{
+    opacity: 1;
+    transform: none;
+  }
+  @media (prefers-reduced-motion: reduce){
+    .reveal, .reveal-child{
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
+  }
+
   /* ---------- utility ---------- */
   .small{ font-size: 14px; color: var(--dim); }
 
@@ -958,7 +992,7 @@
 </section>
 
 <!-- ============ PROBLEM ============ -->
-<section class="problem section" data-screen-label="02 Problem">
+<section class="problem section reveal" data-screen-label="02 Problem">
   <div class="wrap problem-inner">
     <div>
       <div class="section-num">The Pattern</div>
@@ -990,7 +1024,7 @@
 </section>
 
 <!-- ============ CURRICULUM ============ -->
-<section class="cur section" id="curriculum" data-screen-label="03 Curriculum">
+<section class="cur section reveal" id="curriculum" data-screen-label="03 Curriculum">
   <div class="wrap">
     <div class="cur-head">
       <div>
@@ -1047,7 +1081,7 @@
 </section>
 
 <!-- ============ MENTOR ============ -->
-<section class="mentor section" id="mentor" data-screen-label="04 Mentor">
+<section class="mentor section reveal" id="mentor" data-screen-label="04 Mentor">
   <div class="wrap mentor-grid">
     <div class="portrait" aria-label="Portrait of Rahul Srinivas">
       <img src="assets/rahul-portrait.png" alt="Rahul Srinivas">
@@ -1079,7 +1113,7 @@
 </section>
 
 <!-- ============ WHO IS IT FOR ============ -->
-<section class="who section" data-screen-label="05 Who">
+<section class="who section reveal" data-screen-label="05 Who">
   <div class="wrap">
     <div class="who-head">
       <div>
@@ -1127,7 +1161,7 @@
 </section>
 
 <!-- ============ BRAND STORY ============ -->
-<section class="brand-story section" id="about" data-screen-label="06 Brand">
+<section class="brand-story section reveal" id="about" data-screen-label="06 Brand">
   <div class="wrap brand-grid">
     <div>
       <div class="section-num">The Community</div>
@@ -1160,7 +1194,7 @@
 </section>
 
 <!-- ============ SOCIAL PROOF ============ -->
-<section class="proof section" data-screen-label="07 Proof">
+<section class="proof section reveal" data-screen-label="07 Proof">
   <div class="wrap">
     <div class="proof-head">
       <div class="section-num">Hear What They Say</div>
@@ -1190,7 +1224,7 @@
 </section>
 
 <!-- ============ LOGISTICS ============ -->
-<section class="logi section" id="logistics" data-screen-label="07 Logistics">
+<section class="logi section reveal" id="logistics" data-screen-label="07 Logistics">
   <div class="wrap">
     <div class="section-num">The Masterclass</div>
     <h2 class="h2" style="max-width: 18ch">Here's everything<br><em>you need to know.</em></h2>
@@ -1226,7 +1260,7 @@
 </section>
 
 <!-- ============ BONUS + REGISTER ============ -->
-<section class="bonus section" id="register" data-screen-label="08 Bonus">
+<section class="bonus section reveal" id="register" data-screen-label="08 Bonus">
   <div class="wrap bonus-grid">
     <div>
       <div class="section-num">Bonus</div>
@@ -1276,7 +1310,7 @@
 </section>
 
 <!-- ============ FAQ ============ -->
-<section class="faq section" id="faq" data-screen-label="09 FAQ">
+<section class="faq section reveal" id="faq" data-screen-label="09 FAQ">
   <div class="wrap-narrow">
     <div class="section-num">Questions</div>
     <h2 class="h2">Questions you<br><em>might have.</em></h2>
@@ -1323,7 +1357,7 @@
 </section>
 
 <!-- ============ FINAL CTA ============ -->
-<section class="final" data-screen-label="10 Final">
+<section class="final reveal" data-screen-label="10 Final">
   <div class="wrap-narrow final-inner">
     <div class="section-num" style="justify-content:center; display:flex">The Decision</div>
     <h2><em>You came here</em><br>for a <span style="color:var(--accent); font-style: normal;">reason.</span></h2>
@@ -1358,6 +1392,26 @@
     </div>
   </div>
 </footer>
+
+<script>
+  // Reveal sections as they enter the viewport
+  (function(){
+    var els = document.querySelectorAll('.reveal');
+    if(!('IntersectionObserver' in window)){
+      els.forEach(function(el){ el.classList.add('in-view'); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    els.forEach(function(el){ io.observe(el); });
+  })();
+</script>
 
 <script>
   // Simple countdown, counts down to ~2.5 days from load
