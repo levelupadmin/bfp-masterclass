@@ -155,9 +155,8 @@
   .topbar nav{ display:none; gap: 28px; }
   .topbar nav a:hover{ color: var(--fg); }
   .topbar .btn-sm{
-    padding: 8px 16px;
+    padding: 10px 18px;
     font-size: 0.8125rem;
-    border-radius: 999px;
     color: var(--fg);
     box-shadow: 0 0 0 1px var(--rule-2) inset;
     transition: box-shadow .2s ease, color .2s ease, background .2s ease;
@@ -175,6 +174,7 @@
     font-size: 0.9375rem; letter-spacing: -0.02em; /* tt-off */
     font-weight: 700;
     border-radius: 0;
+    white-space: nowrap;
     transition: transform .2s ease, background .2s ease;
   }
   .btn-primary{
@@ -770,7 +770,7 @@
   .final-inner{ position: relative; text-align: center; }
   .final h2{
     font-family: var(--display);
-    font-size: 1.75rem;
+    font-size: 2rem;
     line-height: 1.1; letter-spacing: -0.02em;
     max-width: 16ch; margin: 0 auto;
   }
@@ -1007,7 +1007,8 @@
   /* ---------- responsive typography scale (mobile-first) ----------
      Base values above are mobile (≤480px). Scale up at tablet/desktop. */
   @media (min-width: 768px){
-    .h2, .problem h2, .final h2, .brand-title{ font-size: 2.25rem; }
+    .h2, .problem h2, .brand-title{ font-size: 2.25rem; }
+    .final h2{ font-size: 2.5rem; }
     .h3, .info .big, .brand-body .mission{ font-size: 1.4rem; }
     .lede{ font-size: 1.0625rem; }
     .hero-sub{ font-size: 1.125rem; }
@@ -1018,7 +1019,8 @@
     .final-body{ font-size: 1.0625rem; }
   }
   @media (min-width: 1024px){
-    .h2, .problem h2, .final h2, .brand-title{ font-size: 2.75rem; }
+    .h2, .problem h2, .brand-title{ font-size: 2.75rem; }
+    .final h2{ font-size: 3rem; }
     .h3, .info .big, .brand-body .mission{ font-size: 1.6rem; }
     .lede{ font-size: 1.125rem; }
     .hero-sub{ font-size: 1.1875rem; }
