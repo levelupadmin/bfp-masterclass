@@ -154,20 +154,17 @@
   }
   .topbar nav{ display:none; gap: 28px; }
   .topbar nav a:hover{ color: var(--fg); }
-  .topbar .live{
-    display:inline-flex; align-items:center; gap:8px; color: var(--fg);
+  .topbar .btn-sm{
+    padding: 8px 16px;
+    font-size: 0.8125rem;
+    border-radius: 999px;
+    color: var(--fg);
+    box-shadow: 0 0 0 1px var(--rule-2) inset;
+    transition: box-shadow .2s ease, color .2s ease, background .2s ease;
   }
-  .topbar .live::before{
-    content:""; width:7px; height:7px; border-radius:50%;
-    background: var(--accent);
-    box-shadow: 0 0 0 0 var(--accent);
-    animation: pulse 1.8s infinite;
-  }
-  @keyframes pulse{
-    0%{box-shadow: 0 0 0 0 color-mix(in oklab, var(--accent) 60%, transparent);}
-    70%{box-shadow: 0 0 0 8px transparent;}
-    100%{box-shadow: 0 0 0 0 transparent;}
-  }
+  .topbar .btn-sm .arrow{ display:inline-block; transition: transform .2s ease; }
+  .topbar .btn-sm:hover{ box-shadow: 0 0 0 1px var(--accent) inset; color: var(--accent); }
+  .topbar .btn-sm:hover .arrow{ transform: translateX(3px); }
   @media (min-width: 768px){ .topbar nav{ display:flex; } }
 
   /* ---------- buttons ---------- */
@@ -242,70 +239,77 @@
   .hero-tag .pin{ color: var(--accent); }
 
   /* Hero exception — cinematic fluid scale */
+  .hero-inner{ text-align: center; }
+  .hero-tag{ margin-inline: auto; }
   .hero h1{
     font-family: var(--display);
-    font-size: clamp(2.5rem, 8.8vw, 8.25rem);
+    font-size: clamp(3rem, 8.8vw, 8.25rem);
     line-height: 0.96;
     letter-spacing: -0.01em;
     font-weight: 700;
     max-width: 14ch;
+    margin-inline: auto;
     text-transform: none;
   }
   .hero h1 em{ font-weight: 400; color: var(--fg-2); }
   .hero h1 .accent{ color: var(--accent); font-weight: 700; }
   .hero-sub{
-    margin-top: 34px;
+    margin: 28px auto 0;
     font-size: 1.0625rem;
     color: var(--fg-2);
     max-width: 56ch;
     line-height: 1.6;
   }
 
-  .hero-grid{
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 48px;
-    align-items: end;
-    margin-top: 48px;
-  }
-  @media (min-width: 1024px){ .hero-grid{ grid-template-columns: 1fr 360px; gap: 72px; margin-top: 72px; } }
-
-  .detail-card{
-    border: 1px solid var(--rule-2);
-    padding: 28px;
-    background: var(--bg-2);
-  }
-  .detail-card h4{
-    font-family: var(--mono);
-    font-size: 0.6875rem; letter-spacing: 0.04em; /* tt-off */
-    color: var(--dim);
-    margin-bottom: 20px;
-  }
-  .detail-list{ list-style: none; padding:0; margin:0; display:grid; gap: 16px; }
-  .detail-list li{
-    display:grid; grid-template-columns: 22px 1fr; gap: 14px;
-    align-items:start;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--rule);
-    font-size: 0.9375rem;
-  }
-  .detail-list li:last-child{ border-bottom: 0; padding-bottom: 0; }
-  .detail-list .k{
-    color: var(--accent);
-    font-family: var(--mono);
-    font-size: 0.6875rem;
-    letter-spacing: 0.04em;
-    padding-top: 3px;
-  }
-  .detail-list .v strong{ color: var(--fg); font-weight: 600; }
-  .detail-list .v .tiny{ color: #CFC4B3; font-size: 0.8125rem; }
-
-  .cta-block{ margin-top: 28px; }
+  .cta-block{ margin-top: 32px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
   .cta-trust{
-    margin-top: 18px;
     font-family: var(--mono);
     font-size: 0.6875rem; letter-spacing: 0.04em; /* tt-off */
     color: var(--dim);
+  }
+
+  /* Hero session details — 2x2 mobile, 4-col desktop */
+  .hero-details{
+    list-style: none; padding: 0;
+    margin: 56px auto 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    text-align: left;
+    max-width: 560px;
+  }
+  .hero-details li{
+    padding: 16px;
+    background: var(--bg-2);
+    border: 1px solid var(--rule-2);
+    border-radius: 8px;
+    display: flex; flex-direction: column; gap: 4px;
+  }
+  .hero-details .k{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px; height: 22px;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .hero-details .k svg{ width: 100%; height: 100%; display: block; }
+  .hero-details strong{
+    color: var(--fg);
+    font-size: 0.9375rem;
+    font-weight: 600;
+  }
+  .hero-details .tiny{
+    color: var(--dim);
+    font-size: 0.75rem;
+  }
+  @media (min-width: 768px){
+    .hero-details{
+      grid-template-columns: repeat(4, 1fr);
+      max-width: 1000px;
+      gap: 16px;
+      margin-top: 72px;
+    }
   }
 
   /* hero film perforations background */
@@ -1031,7 +1035,10 @@
       <a href="#about">About Us</a>
       <a href="#faq">FAQ</a>
     </nav>
-    <span class="live">Live · Seats filling</span>
+    <a href="#register" class="btn btn-ghost btn-sm">
+      Enroll Now
+      <span class="arrow">→</span>
+    </a>
   </div>
 </header>
 
@@ -1055,42 +1062,48 @@
       career in <em>2026.</em>
     </h1>
 
-    <div class="hero-grid">
-      <div>
-        <p class="hero-sub">
-          A 2-hour live session and learn the exact path professional filmmakers are using today, even if you've never picked up a camera.
-        </p>
-        <div class="cta-block">
-          <a href="#register" class="btn btn-primary btn-lg">
-            Enroll Now
-            <span class="arrow">→</span>
-          </a>
-          <div class="cta-trust">Limited to 500 seats per session · No prior experience required</div>
-        </div>
-      </div>
+    <p class="hero-sub">
+      A 2-hour live session and learn the exact path professional filmmakers are using today, even if you've never picked up a camera.
+    </p>
 
-      <aside class="detail-card">
-        <h4>Session Details</h4>
-        <ul class="detail-list">
-          <li>
-            <span class="k">01</span>
-            <span class="v"><strong>Sat, 08 Feb 2026</strong><div class="tiny">Saturday evening</div></span>
-          </li>
-          <li>
-            <span class="k">02</span>
-            <span class="v"><strong>7:00 – 9:00 PM IST</strong><div class="tiny">+ 15 min live Q&amp;A</div></span>
-          </li>
-          <li>
-            <span class="k">03</span>
-            <span class="v"><strong>Live on Zoom</strong><div class="tiny">Link sent day before</div></span>
-          </li>
-          <li>
-            <span class="k">04</span>
-            <span class="v"><strong>Bonus stack · ₹14,900 value</strong><div class="tiny">Yours on registration</div></span>
-          </li>
-        </ul>
-      </aside>
+    <div class="cta-block">
+      <a href="#register" class="btn btn-primary btn-lg">
+        Enroll Now
+        <span class="arrow">→</span>
+      </a>
+      <div class="cta-trust">Limited to 500 seats per session · No prior experience required</div>
     </div>
+
+    <ul class="hero-details">
+      <li>
+        <span class="k" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="1.5"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+        </span>
+        <strong>Sat, 08 Feb 2026</strong>
+        <span class="tiny">Saturday evening</span>
+      </li>
+      <li>
+        <span class="k" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        </span>
+        <strong>7:00 – 9:00 PM IST</strong>
+        <span class="tiny">+ 15 min live Q&amp;A</span>
+      </li>
+      <li>
+        <span class="k" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="1.5"/><path d="M16 10l6-3v10l-6-3z"/></svg>
+        </span>
+        <strong>Live on Zoom</strong>
+        <span class="tiny">Link sent day before</span>
+      </li>
+      <li>
+        <span class="k" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12v9H4v-9"/><rect x="2" y="7" width="20" height="5" rx="0.5"/><path d="M12 22V7M12 7s-1-4-4-4-3 3-3 3 1 1 3 1 4 0 4 0zM12 7s1-4 4-4 3 3 3 3-1 1-3 1-4 0-4 0z"/></svg>
+        </span>
+        <strong>Bonus stack · ₹14,900 value</strong>
+        <span class="tiny">Yours on registration</span>
+      </li>
+    </ul>
   </div>
 
   <div class="marquee" aria-hidden="true">
