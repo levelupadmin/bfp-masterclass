@@ -96,13 +96,13 @@
   .display em{ font-weight: 400; color: var(--fg-2); }
   .display .accent{ color: var(--accent); font-weight: 700; }
 
-  /* Standard h2 scale — 1.5 → 1.8 → 2rem */
+  /* Standard h2 scale — 1.75 → 2.25 → 2.75rem */
   .h2{
     font-family: var(--display);
     font-weight: 700;
-    font-size: 1.5rem;
-    line-height: 1.15;
-    letter-spacing: -0.015em;
+    font-size: 1.75rem;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
   }
   .h2 em{ font-weight: 400; color: var(--fg-2); }
   .h3{
@@ -353,8 +353,8 @@
   .problem h2{
     font-family: var(--display);
     font-weight: 700;
-    font-size: 1.5rem;
-    line-height: 1.15;
+    font-size: 1.75rem;
+    line-height: 1.1;
     letter-spacing: -0.02em;
   }
   .problem h2 em{ font-style: normal; font-weight: 400; color: var(--dim); }
@@ -757,8 +757,8 @@
   .final-inner{ position: relative; text-align: center; }
   .final h2{
     font-family: var(--display);
-    font-size: 1.5rem;
-    line-height: 1.15; letter-spacing: -0.02em;
+    font-size: 1.75rem;
+    line-height: 1.1; letter-spacing: -0.02em;
     max-width: 16ch; margin: 0 auto;
   }
   .final h2 em{ font-style: normal; color: var(--dim); }
@@ -798,8 +798,8 @@
   .brand-title{
     font-family: var(--display);
     font-weight: 700;
-    font-size: 1.5rem;
-    line-height: 1.15;
+    font-size: 1.75rem;
+    line-height: 1.1;
     letter-spacing: -0.02em;
     /* tt-off */
   }
@@ -994,7 +994,7 @@
   /* ---------- responsive typography scale (mobile-first) ----------
      Base values above are mobile (≤480px). Scale up at tablet/desktop. */
   @media (min-width: 768px){
-    .h2, .problem h2, .final h2, .brand-title{ font-size: 1.8rem; }
+    .h2, .problem h2, .final h2, .brand-title{ font-size: 2.25rem; }
     .h3, .info .big, .brand-body .mission{ font-size: 1.4rem; }
     .lede{ font-size: 1.0625rem; }
     .hero-sub{ font-size: 1.125rem; }
@@ -1005,7 +1005,7 @@
     .final-body{ font-size: 1.0625rem; }
   }
   @media (min-width: 1024px){
-    .h2, .problem h2, .final h2, .brand-title{ font-size: 2rem; }
+    .h2, .problem h2, .final h2, .brand-title{ font-size: 2.75rem; }
     .h3, .info .big, .brand-body .mission{ font-size: 1.6rem; }
     .lede{ font-size: 1.125rem; }
     .hero-sub{ font-size: 1.1875rem; }
