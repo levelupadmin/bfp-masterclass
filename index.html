@@ -4,10 +4,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>BFP Masterclass: How to Start Your Filmmaking Career in 2026</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.cdnfonts.com/css/aileron" rel="stylesheet">
+<link rel="preload" href="fonts/Aileron-Regular.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="fonts/Aileron-SemiBold.woff2" as="font" type="font/woff2" crossorigin="">
+<link rel="preload" href="fonts/Aileron-Bold.woff2" as="font" type="font/woff2" crossorigin="">
 <style>
+  /* ---------- Aileron (self-hosted) ---------- */
+  @font-face { font-family: 'Aileron'; src: url('fonts/Aileron-Thin.woff2') format('woff2');          font-weight: 100; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Aileron'; src: url('fonts/Aileron-ThinItalic.woff2') format('woff2');    font-weight: 100; font-style: italic; font-display: swap; }
+  @font-face { font-family: 'Aileron'; src: url('fonts/Aileron-Light.woff2') format('woff2');         font-weight: 300; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Aileron'; src: url('fonts/Aileron-LightItalic.woff2') format('woff2');   font-weight: 300; font-style: italic; font-display: swap; }
+  @font-face { font-family: 'Aileron'; src: url('fonts/Aileron-Regular.woff2') format('woff2');       font-weight: 400; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Aileron'; src: url('fonts/Aileron-Italic.woff2') format('woff2');        font-weight: 400; font-style: italic; font-display: swap; }
+  @font-face { font-family: 'Aileron'; src: url('fonts/Aileron-SemiBold.woff2') format('woff2');      font-weight: 600; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Aileron'; src: url('fonts/Aileron-SemiBoldItalic.woff2') format('woff2');font-weight: 600; font-style: italic; font-display: swap; }
+  @font-face { font-family: 'Aileron'; src: url('fonts/Aileron-Bold.woff2') format('woff2');          font-weight: 700; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Aileron'; src: url('fonts/Aileron-BoldItalic.woff2') format('woff2');    font-weight: 700; font-style: italic; font-display: swap; }
+
   :root{
     --bg: #0E0D0B;
     --bg-2: #141210;
@@ -18,9 +30,9 @@
     --dimmer: #6D6759;
     --rule: #2A2722;
     --rule-2: #3A3630;
-    --accent: oklch(0.78 0.17 58);        /* warm amber */
+    --accent: #FFA115;                     /* locked design token */
     --accent-ink: #0E0D0B;
-    --accent-soft: oklch(0.78 0.17 58 / 0.14);
+    --accent-soft: rgba(255, 161, 21, 0.14);
     --warn: oklch(0.65 0.19 25);           /* reserved red */
     --display: "Aileron", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
     --sans: "Aileron", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
@@ -161,7 +173,7 @@
     gap: 12px; padding: 18px 28px;
     font-family: var(--sans);
     font-size: clamp(14px, 2.6vw, 20px); letter-spacing: -0.02em; /* tt-off */
-    font-weight: 900;
+    font-weight: 700;
     border-radius: 0;
     transition: transform .2s ease, background .2s ease;
   }
@@ -281,7 +293,7 @@
     letter-spacing: 0.04em;
     padding-top: 3px;
   }
-  .detail-list .v strong{ color: var(--fg); font-weight: 500; }
+  .detail-list .v strong{ color: var(--fg); font-weight: 600; }
   .detail-list .v .tiny{ color: #CFC4B3; font-size: 13px; }
 
   .cta-block{ margin-top: 28px; }
@@ -357,7 +369,7 @@
     background: var(--bg-2);
     font-size: 18px;
   }
-  .problem-body .bang strong{ color: var(--accent); font-weight: 500; }
+  .problem-body .bang strong{ color: var(--accent); font-weight: 600; }
 
   .counter{
     display:grid; grid-template-columns: repeat(10, 1fr);
@@ -447,7 +459,7 @@
   .mentor h2 .name{ color: var(--accent); font-style: normal; }
   .mentor .role{ margin-top: 12px; color: var(--dim); font-family: var(--mono); font-size: 12px; letter-spacing: 0.04em; /* tt-off */ }
   .mentor .bio p{ color: var(--fg-2); font-size: 17px; line-height: 1.7; margin: 20px 0 0; }
-  .mentor .bio p strong{ color: var(--fg); font-weight: 500; }
+  .mentor .bio p strong{ color: var(--fg); font-weight: 600; }
 
   .stat-bar{
     margin-top: 56px;
@@ -498,7 +510,7 @@
     font-family: var(--mono); font-size: 14px;
   }
   .who-cell p{ margin: 0; color: var(--fg); font-size: 17px; line-height: 1.5; }
-  .who-cell p strong{ font-weight: 500; }
+  .who-cell p strong{ font-weight: 600; }
 
   .warn{
     margin-top: 48px;
@@ -675,7 +687,7 @@
     font-size: 16px; line-height: 1.7;
     max-width: 72ch;
   }
-  details .a strong{ color: var(--fg); font-weight: 500; }
+  details .a strong{ color: var(--fg); font-weight: 600; }
   @media (max-width: 560px){ details summary{ grid-template-columns: 40px 1fr 20px; } details .a{ margin-left: 0; } }
 
   /* ---------- final CTA ---------- */
@@ -767,7 +779,7 @@
     margin: 0;
     max-width: 44ch;
   }
-  .brand-body p strong{ color: var(--fg); font-weight: 500; }
+  .brand-body p strong{ color: var(--fg); font-weight: 600; }
   .brand-body .mission{
     font-family: var(--display);
     font-size: clamp(22px, 2vw, 28px);
@@ -1013,7 +1025,7 @@
   }
 </style>
 </head>
-<body data-cc-id="cc-1" style="cursor: crosshair; background-color: rgb(8, 8, 8);">
+<body>
 
 <!-- ============ TOP BAR ============ -->
 <header class="topbar">
@@ -1334,7 +1346,7 @@
   <div class="wrap">
     <div class="section-num">The Masterclass</div>
     <h2 class="h2" style="max-width: 18ch">Here's everything<br><em>you need to know.</em></h2>
-    <p class="lede" style="margin-top: 24px;">The masterclass is <strong style="color:var(--accent); font-weight: 500;">completely free</strong>. All we need is your commitment to show up live.</p>
+    <p class="lede" style="margin-top: 24px;">The masterclass is <strong style="color:var(--accent); font-weight: 600;">completely free</strong>. All we need is your commitment to show up live.</p>
 
     <div class="info-grid">
       <div class="info">
