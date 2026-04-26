@@ -234,6 +234,7 @@
     font-family: var(--mono);
     font-size: 0.6875rem; letter-spacing: 0.04em; /* tt-off */
     margin-bottom: 44px;
+    text-align: left;
   }
   .hero-tag .divider{ width: 1px; height: 10px; background: var(--rule-2); }
   .hero-tag .pin{ color: var(--accent); }
@@ -371,7 +372,17 @@
     margin-top: 28px;
   }
   .problem-body p{ color: var(--fg-2); font-size: 1.0625rem; line-height: 1.7; margin: 0 0 20px; }
-  .problem-body p .hang{ color: var(--dim); font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.04em; display:inline-block; width: 40px; vertical-align: top; margin-right: 6px; }
+  .problem-body p .hang{
+    display: inline;
+    width: auto;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    letter-spacing: inherit;
+    vertical-align: baseline;
+    margin-right: 0.3em;
+  }
   .problem-body .bang{
     margin-top: 36px; padding: 28px; border-left: 2px solid var(--accent);
     background: var(--bg-2);
@@ -472,25 +483,26 @@
   .portrait .ticks::before{ left:50%; top: -8px; bottom: -8px; width:1px; transform: translateX(-50%); }
   .portrait .ticks::after{ top:50%; left: -8px; right: -8px; height:1px; transform: translateY(-50%); }
 
-  .mentor h2 .name{ color: var(--accent); font-style: normal; }
+  .mentor h2 .name{ color: var(--accent); font-style: normal; font-size: 1.25em; letter-spacing: -0.025em; }
   .mentor .role{ margin-top: 12px; color: var(--dim); font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.04em; /* tt-off */ }
-  .mentor .bio p{ color: var(--fg-2); font-size: 1.0625rem; line-height: 1.7; margin: 20px 0 0; }
+  .mentor .bio p{ color: var(--fg-2); font-size: 0.9375rem; line-height: 1.65; margin: 20px 0 0; }
   .mentor .bio p strong{ color: var(--fg); font-weight: 600; }
 
   .stat-bar{
     margin-top: 56px;
-    display:grid; grid-template-columns: 1fr;
+    display: grid; grid-template-columns: repeat(2, 1fr);
     border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
   }
   .stat{
     padding: 24px 16px;
-    border-right: 0;
+    border-right: 1px solid var(--rule);
     border-bottom: 1px solid var(--rule);
   }
-  .stat:last-child{ border-bottom: 0; }
+  .stat:nth-child(2n){ border-right: 0; }
+  .stat:nth-last-child(-n+2){ border-bottom: 0; }
   .stat .n{
     font-family: var(--display);
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     line-height: 1;
     color: var(--accent);
     letter-spacing: -0.02em;
@@ -501,19 +513,16 @@
     font-size: 0.625rem; letter-spacing: 0.04em; /* tt-off */
     color: var(--dim);
   }
-  @media (min-width: 480px){
-    .stat-bar{ grid-template-columns: repeat(2, 1fr); }
-    .stat{ padding: 32px 24px; border-right: 1px solid var(--rule); border-bottom: 0; }
-    .stat:nth-child(2n){ border-right: 0; }
-    .stat:nth-child(-n+2){ border-bottom: 1px solid var(--rule); }
+  @media (min-width: 768px){
+    .stat{ padding: 32px 24px; }
     .stat .n{ font-size: clamp(1.75rem, 4.4vw, 4.25rem); }
     .stat .l{ font-size: 0.6875rem; }
   }
   @media (min-width: 1024px){
     .stat-bar{ grid-template-columns: repeat(4, 1fr); }
-    .stat{ border-bottom: 0; }
-    .stat:nth-child(-n+2){ border-bottom: 0; }
-    .stat:not(:last-child){ border-right: 1px solid var(--rule); }
+    .stat{ border-bottom: 0; border-right: 1px solid var(--rule); }
+    .stat:nth-child(2n){ border-right: 1px solid var(--rule); }
+    .stat:nth-last-child(-n+2){ border-bottom: 0; }
     .stat:last-child{ border-right: 0; }
   }
 
@@ -1213,7 +1222,7 @@
 
     <div>
       <div class="section-num">The Mentor</div>
-      <h2 class="h2">Meet <span class="name">Rahul Srinivas.</span></h2>
+      <h2 class="h2">Meet<br><span class="name">Rahul Srinivas.</span></h2>
       <div class="role">Founder · Level Up Learning · Writer · Creative Director · Producer</div>
 
       <div class="bio">
