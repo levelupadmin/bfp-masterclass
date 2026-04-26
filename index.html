@@ -239,6 +239,50 @@
   .hero-tag .divider{ width: 1px; height: 10px; background: var(--rule-2); }
   .hero-tag .pin{ color: var(--accent); }
 
+  /* Production slate — clapperboard motif */
+  .slate{
+    display: inline-flex;
+    flex-direction: column;
+    margin-inline: auto;
+    margin-bottom: 36px;
+    border: 1px solid var(--rule-2);
+    background: var(--bg-2);
+    border-radius: 4px;
+    overflow: hidden;
+    font-family: var(--mono);
+    text-align: left;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+  }
+  .slate-clapper{
+    height: 16px;
+    background: repeating-linear-gradient(
+      -50deg,
+      #f5f0e3 0,
+      #f5f0e3 14px,
+      #0a0a0a 14px,
+      #0a0a0a 28px
+    );
+    border-bottom: 1px solid var(--rule-2);
+  }
+  .slate-body{
+    display: flex;
+    align-items: stretch;
+  }
+  .slate-field{
+    display: inline-flex;
+    align-items: baseline;
+    gap: 6px;
+    padding: 10px 14px;
+    font-size: 0.6875rem;
+    letter-spacing: 0.06em;
+    white-space: nowrap;
+  }
+  .slate-field + .slate-field{
+    border-left: 1px solid var(--rule-2);
+  }
+  .slate-label{ color: var(--dim); text-transform: uppercase; }
+  .slate-val{ color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; }
+
   /* Hero exception — cinematic fluid scale */
   .hero-inner{ text-align: center; }
   .hero-tag{ margin-inline: auto; }
@@ -390,12 +434,42 @@
   }
   .problem-body .bang strong{ color: var(--accent); font-weight: 600; }
 
-  .counter{
-    display:grid; grid-template-columns: repeat(10, 1fr);
-    gap: 4px; margin: 40px 0 0;
+  /* Pattern visual — 100 mini film frames, 1 in accent */
+  .frame-grid{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 4px;
+    margin: 40px 0 0;
+    max-width: 360px;
   }
-  .counter div{ height: 8px; background: var(--rule); }
-  .counter div:first-child{ background: var(--accent); }
+  .frame{
+    aspect-ratio: 4 / 3;
+    background: var(--bg-3);
+    border: 1px solid var(--rule);
+    border-radius: 1px;
+    position: relative;
+    overflow: hidden;
+  }
+  .frame::before, .frame::after{
+    content: "";
+    position: absolute;
+    left: 0; right: 0; height: 2px;
+    background-image: radial-gradient(circle, var(--rule) 0.5px, transparent 1px);
+    background-size: 4px 2px;
+    background-repeat: repeat-x;
+    opacity: 0.6;
+  }
+  .frame::before{ top: 1px; }
+  .frame::after{ bottom: 1px; }
+  .frame.on{
+    background: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 0 12px rgba(255, 161, 21, 0.55);
+  }
+  .frame.on::before, .frame.on::after{
+    background-image: radial-gradient(circle, var(--accent-ink) 0.5px, transparent 1px);
+    opacity: 0.5;
+  }
 
   /* ---------- curriculum ---------- */
   .cur{ background: var(--bg-2); border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
@@ -638,6 +712,18 @@
     display:inline-flex; align-items:center; justify-content:center;
     color: var(--accent); font-family: var(--mono); font-size: 0.8125rem;
   }
+  .info-accent{
+    background:
+      linear-gradient(160deg,
+        color-mix(in oklab, var(--accent) 16%, transparent) 0%,
+        color-mix(in oklab, var(--accent) 4%, transparent) 50%,
+        transparent 100%);
+    box-shadow: inset 0 0 0 1px color-mix(in oklab, var(--accent) 22%, transparent);
+  }
+  .info-accent .icon{
+    background: color-mix(in oklab, var(--accent) 18%, transparent);
+    color: var(--accent);
+  }
   .info h4{
     font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.04em; /* tt-off */ color: var(--dim);
   }
@@ -768,10 +854,11 @@
     pointer-events:none;
   }
   .final-inner{ position: relative; text-align: center; }
+  /* Final headline — closer to hero scale */
   .final h2{
     font-family: var(--display);
-    font-size: 2rem;
-    line-height: 1.1; letter-spacing: -0.02em;
+    font-size: clamp(2.5rem, 7.5vw, 5.5rem);
+    line-height: 1; letter-spacing: -0.02em;
     max-width: 16ch; margin: 0 auto;
   }
   .final h2 em{ font-style: normal; color: var(--dim); }
@@ -849,11 +936,29 @@
 
   .brand-card{
     position: relative;
-    padding: 48px 48px 0;
+    padding: 32px 32px 0;
     border: 1px solid var(--rule-2);
     background:
       linear-gradient(160deg, color-mix(in oklab, var(--accent) 14%, var(--bg-2)) 0%, var(--bg-2) 70%);
     overflow: hidden;
+  }
+  .brand-card-mark{
+    margin-bottom: 20px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--rule-2);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .brand-card-mark img{
+    height: 28px; width: auto; display: block;
+  }
+  .brand-card-mark .tag{
+    font-family: var(--mono);
+    font-size: 0.6875rem;
+    color: var(--dim);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
   }
   .brand-card::before{
     content: "";
@@ -863,7 +968,7 @@
     pointer-events: none;
   }
   .brand-card > *{ position: relative; z-index: 1; }
-  .bstat + .bstat{ margin-top: 28px; padding-top: 28px; border-top: 1px solid var(--rule-2); }
+  .bstat + .bstat{ margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--rule-2); }
   .bstat-n{
     font-family: var(--display);
     font-size: clamp(2.75rem, 5vw, 4.5rem);
@@ -874,17 +979,16 @@
   }
   .bstat-n span{ font-size: 0.55em; color: var(--fg-2); }
   .bstat-l{
-    margin-top: 12px;
+    margin-top: 6px;
     color: var(--fg-2);
-    font-size: 1rem;
     font-family: var(--mono);
     font-size: 0.75rem;
     letter-spacing: 0.04em;
     /* tt-off */
   }
   .roster{
-    margin-top: 40px;
-    padding-top: 32px;
+    margin-top: 18px;
+    padding-top: 16px;
     border-top: 1px solid var(--rule-2);
   }
   .roster-head{
@@ -893,19 +997,18 @@
     letter-spacing: 0.04em;
     /* tt-off */
     color: var(--dim);
-    margin-bottom: 20px;
+    margin-bottom: 12px;
   }
   .roster-collage{
     display: block;
-    width: 100%;
+    width: calc(100% + 64px);
     height: auto;
-    margin-top: 8px;
-    margin-bottom: 0;
+    margin: 8px -32px -1px;
     mix-blend-mode: screen;
   }
-  .brand-card{ padding: 32px 32px 0; }
   @media (min-width: 480px){
-    .brand-card{ padding: 48px 48px 0; }
+    .brand-card{ padding: 40px 40px 0; }
+    .roster-collage{ width: calc(100% + 80px); margin: 8px -40px -1px; }
   }
 
   /* ---------- footer ---------- */
@@ -1008,7 +1111,6 @@
      Base values above are mobile (≤480px). Scale up at tablet/desktop. */
   @media (min-width: 768px){
     .h2, .problem h2, .brand-title{ font-size: 2.25rem; }
-    .final h2{ font-size: 2.5rem; }
     .h3, .info .big, .brand-body .mission{ font-size: 1.4rem; }
     .lede{ font-size: 1.0625rem; }
     .hero-sub{ font-size: 1.125rem; }
@@ -1020,7 +1122,6 @@
   }
   @media (min-width: 1024px){
     .h2, .problem h2, .brand-title{ font-size: 2.75rem; }
-    .final h2{ font-size: 3rem; }
     .h3, .info .big, .brand-body .mission{ font-size: 1.6rem; }
     .lede{ font-size: 1.125rem; }
     .hero-sub{ font-size: 1.1875rem; }
@@ -1060,12 +1161,14 @@
     <div class="edge right"></div>
   </div>
   <div class="wrap hero-inner">
-      <span class="hero-tag">
-      <span class="pin">●</span>
-      <span>Free 2-Hour Live Masterclass</span>
-      <span class="divider"></span>
-      <span>Hosted Online</span>
-    </span>
+      <div class="slate" role="img" aria-label="Production slate: Scene 01, Take 2026, Director Srinivas">
+        <div class="slate-clapper" aria-hidden="true"></div>
+        <div class="slate-body">
+          <span class="slate-field"><span class="slate-label">Scene</span><span class="slate-val">01</span></span>
+          <span class="slate-field"><span class="slate-label">Take</span><span class="slate-val">2026</span></span>
+          <span class="slate-field"><span class="slate-label">Dir.</span><span class="slate-val">Srinivas</span></span>
+        </div>
+      </div>
 
     <h1>
       How to <span class="accent">start</span><br>
@@ -1137,9 +1240,8 @@
       </h2>
       <div class="sub">Which one are you?</div>
 
-      <div class="counter" aria-hidden="true">
-        <div></div><div></div><div></div><div></div><div></div>
-        <div></div><div></div><div></div><div></div><div></div>
+      <div class="frame-grid" aria-hidden="true">
+        <span class="frame on"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span><span class="frame"></span>
       </div>
       <div class="micro" style="margin-top:14px">1 of 100 registrants finish a film within 12 months.</div>
     </div>
@@ -1238,10 +1340,10 @@
 
   <div class="wrap" style="margin-top: 40px;">
     <div class="stat-bar">
-      <div class="stat"><div class="n">3,00,000<span style="color:var(--fg-2); font-size:0.55em; letter-spacing:-0.02em">+</span></div><div class="l">Community Members</div></div>
-      <div class="stat"><div class="n">60,000<span style="color:var(--fg-2); font-size:0.55em">+</span></div><div class="l">Students Trained</div></div>
-      <div class="stat"><div class="n">100<span style="color:var(--fg-2); font-size:0.55em">+</span></div><div class="l">Feature Films · Alumni</div></div>
-      <div class="stat"><div class="n">1,000<span style="color:var(--fg-2); font-size:0.55em">+</span></div><div class="l">Short Films · Alumni</div></div>
+      <div class="stat"><div class="n"><span class="num" data-counter="300000">0</span><span style="color:var(--fg-2); font-size:0.55em; letter-spacing:-0.02em">+</span></div><div class="l">Community Members</div></div>
+      <div class="stat"><div class="n"><span class="num" data-counter="60000">0</span><span style="color:var(--fg-2); font-size:0.55em">+</span></div><div class="l">Students Trained</div></div>
+      <div class="stat"><div class="n"><span class="num" data-counter="100">0</span><span style="color:var(--fg-2); font-size:0.55em">+</span></div><div class="l">Feature Films · Alumni</div></div>
+      <div class="stat"><div class="n"><span class="num" data-counter="1000">0</span><span style="color:var(--fg-2); font-size:0.55em">+</span></div><div class="l">Short Films · Alumni</div></div>
     </div>
   </div>
 </section>
@@ -1310,12 +1412,16 @@
     </div>
 
     <aside class="brand-card">
+      <div class="brand-card-mark">
+        <img src="assets/levelup-logo.png" alt="LevelUp Learning">
+        <span class="tag">Est. since launch</span>
+      </div>
       <div class="bstat">
-        <div class="bstat-n">3,00,000<span>+</span></div>
+        <div class="bstat-n"><span class="num" data-counter="300000">0</span><span>+</span></div>
         <div class="bstat-l">Community Members</div>
       </div>
       <div class="bstat">
-        <div class="bstat-n">60,000<span>+</span></div>
+        <div class="bstat-n"><span class="num" data-counter="60000">0</span><span>+</span></div>
         <div class="bstat-l">Students Trained</div>
       </div>
 
@@ -1383,7 +1489,7 @@
         <div class="big">Live on Zoom</div>
         <div class="note">Link sent to email + WhatsApp the day before.</div>
       </div>
-      <div class="info">
+      <div class="info info-accent">
         <span class="icon">₹</span>
         <h4>Cost</h4>
         <div class="big">Free.</div>
@@ -1493,7 +1599,14 @@
 <!-- ============ FINAL CTA ============ -->
 <section class="final reveal" data-screen-label="10 Final">
   <div class="wrap-narrow final-inner">
-    <div class="section-num" style="justify-content:center; display:flex">The Decision</div>
+    <div class="slate" role="img" aria-label="Production slate: Act III, Scene Fin, Director Srinivas">
+      <div class="slate-clapper" aria-hidden="true"></div>
+      <div class="slate-body">
+        <span class="slate-field"><span class="slate-label">Act</span><span class="slate-val">III</span></span>
+        <span class="slate-field"><span class="slate-label">Scene</span><span class="slate-val">FIN</span></span>
+        <span class="slate-field"><span class="slate-label">Dir.</span><span class="slate-val">Srinivas</span></span>
+      </div>
+    </div>
     <h2><em>You came here</em><br>for a <span style="color:var(--accent); font-style: normal;">reason.</span></h2>
     <div class="final-body">
       <p>Maybe you've been thinking about this for years. Maybe it hit you last week.</p>
@@ -1544,6 +1657,36 @@
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
     els.forEach(function(el){ io.observe(el); });
+  })();
+
+  // Number counter — animates 0 -> data-counter over 2s when in view
+  (function(){
+    var nodes = document.querySelectorAll('[data-counter]');
+    if(!nodes.length) return;
+    function setText(el, n){ el.textContent = n.toLocaleString('en-IN'); }
+    if(!('IntersectionObserver' in window)){
+      nodes.forEach(function(el){ setText(el, parseInt(el.dataset.counter, 10)); });
+      return;
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(!entry.isIntersecting) return;
+        var el = entry.target;
+        io.unobserve(el);
+        var target = parseInt(el.dataset.counter, 10);
+        var duration = 2000;
+        var start = performance.now();
+        function step(now){
+          var t = Math.min(1, (now - start) / duration);
+          var eased = 1 - Math.pow(1 - t, 3);
+          setText(el, Math.floor(eased * target));
+          if(t < 1) requestAnimationFrame(step);
+          else setText(el, target);
+        }
+        requestAnimationFrame(step);
+      });
+    }, { threshold: 0.4 });
+    nodes.forEach(function(el){ io.observe(el); });
   })();
 </script>
 
