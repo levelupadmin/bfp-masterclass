@@ -248,25 +248,36 @@
     display: inline-flex;
     flex-direction: column;
     margin-inline: auto;
-    margin-bottom: 36px;
+    margin-bottom: 32px;
     border: 1px solid var(--rule-2);
     background: var(--bg-2);
     border-radius: 4px;
     overflow: hidden;
     font-family: var(--mono);
     text-align: left;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.35);
+    box-shadow: 0 3px 18px rgba(0,0,0,0.35);
   }
   .slate-clapper{
-    height: 16px;
+    height: 10px;
     background: repeating-linear-gradient(
       -50deg,
       #f5f0e3 0,
-      #f5f0e3 14px,
-      #0a0a0a 14px,
-      #0a0a0a 28px
+      #f5f0e3 9px,
+      #0a0a0a 9px,
+      #0a0a0a 18px
     );
     border-bottom: 1px solid var(--rule-2);
+  }
+  .slate-prod{
+    padding: 4px 12px 5px;
+    font-size: 0.5625rem;
+    letter-spacing: 0.14em;
+    text-align: center;
+    color: var(--accent);
+    background: color-mix(in oklab, var(--accent) 8%, transparent);
+    border-bottom: 1px solid var(--rule-2);
+    text-transform: uppercase;
+    font-weight: 600;
   }
   .slate-body{
     display: flex;
@@ -275,9 +286,9 @@
   .slate-field{
     display: inline-flex;
     align-items: baseline;
-    gap: 6px;
-    padding: 10px 14px;
-    font-size: 0.6875rem;
+    gap: 5px;
+    padding: 6px 10px;
+    font-size: 0.5625rem;
     letter-spacing: 0.06em;
     white-space: nowrap;
   }
@@ -434,7 +445,22 @@
   .problem-body .bang{
     margin-top: 36px; padding: 28px; border-left: 2px solid var(--accent);
     background: var(--bg-2);
+  }
+  .problem-body .bang-title{
+    font-family: 'Monument Extended', var(--display);
+    font-weight: 400;
     font-size: 1.125rem;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-transform: uppercase;
+    color: var(--fg);
+    margin: 0 0 14px;
+  }
+  .problem-body .bang p{
+    margin: 0;
+    color: var(--fg-2);
+    font-size: 1rem;
+    line-height: 1.6;
   }
   .problem-body .bang strong{ color: var(--accent); font-weight: 600; }
 
@@ -561,7 +587,14 @@
   .portrait .ticks::before{ left:50%; top: -8px; bottom: -8px; width:1px; transform: translateX(-50%); }
   .portrait .ticks::after{ top:50%; left: -8px; right: -8px; height:1px; transform: translateY(-50%); }
 
-  .mentor h2 .name{ color: var(--accent); font-style: normal; font-size: 1.25em; letter-spacing: -0.025em; }
+  .mentor h2{
+    font-family: 'Monument Extended', var(--display);
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: normal;
+    line-height: 1.15;
+  }
+  .mentor h2 .name{ color: var(--accent); font-style: normal; font-size: 1.25em; letter-spacing: normal; }
   .mentor .role{ margin-top: 12px; color: var(--dim); font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.04em; /* tt-off */ }
   .mentor .bio p{ color: var(--fg-2); font-size: 0.9375rem; line-height: 1.65; margin: 20px 0 0; }
   .mentor .bio p strong{ color: var(--fg); font-weight: 600; }
@@ -631,20 +664,29 @@
 
   .warn{
     margin-top: 48px;
-    border: 1px solid color-mix(in oklab, var(--warn) 60%, var(--rule));
+    border: 1px solid color-mix(in oklab, var(--accent) 30%, var(--rule));
     padding: 32px;
-    background: color-mix(in oklab, var(--warn) 8%, var(--bg));
+    background: color-mix(in oklab, var(--accent) 6%, var(--bg));
     display:grid; grid-template-columns: 1fr; gap: 24px;
     align-items: start;
   }
   .warn .badge{
     width: 56px; height: 56px;
     display: inline-flex; align-items: center; justify-content: center;
-    border: 1.5px solid var(--warn); color: var(--warn);
+    border: 1.5px solid var(--accent); color: var(--accent);
     font-family: var(--mono); font-size: 0.8125rem; letter-spacing: 0.04em;
     transform: rotate(-3deg);
   }
-  .warn h4{ font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.04em; /* tt-off */ color: var(--warn); margin-bottom: 10px; }
+  .warn h3{
+    font-family: 'Monument Extended', var(--display);
+    font-weight: 400;
+    font-size: 1.125rem;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-transform: uppercase;
+    color: var(--fg);
+    margin-bottom: 14px;
+  }
   .warn p{ margin: 0; color: var(--fg-2); font-size: 1rem; line-height: 1.6; }
   @media (min-width: 480px){ .warn{ grid-template-columns: 56px 1fr; } }
 
@@ -858,13 +900,17 @@
     pointer-events:none;
   }
   .final-inner{ position: relative; text-align: center; }
-  /* Final headline — closer to hero scale */
+  /* Final headline — Monument Extended display */
   .final h2{
-    font-family: var(--display);
-    font-size: clamp(2.5rem, 7.5vw, 5.5rem);
-    line-height: 1; letter-spacing: -0.02em;
+    font-family: 'Monument Extended', var(--display);
+    font-weight: 400;
+    font-size: clamp(2rem, 5.5vw, 4rem);
+    line-height: 1.1;
+    letter-spacing: normal;
+    text-transform: uppercase;
     max-width: 16ch; margin: 0 auto;
   }
+  .final h2 em{ font-style: normal; color: var(--dim); }
   .final h2 em{ font-style: normal; color: var(--dim); }
   .final-body{
     max-width: 52ch; margin: 40px auto 0;
@@ -900,11 +946,12 @@
     .brand-grid{ grid-template-columns: 1fr 1fr; gap: 80px; }
   }
   .brand-title{
-    font-family: var(--display);
-    font-weight: 700;
+    font-family: 'Monument Extended', var(--display);
+    font-weight: 400;
     font-size: 1.75rem;
-    line-height: 1.1;
-    letter-spacing: -0.02em;
+    line-height: 1.15;
+    letter-spacing: normal;
+    text-transform: uppercase;
     /* tt-off */
   }
   .brand-sub{
@@ -1166,8 +1213,9 @@
     <div class="edge right"></div>
   </div>
   <div class="wrap hero-inner">
-      <div class="slate" role="img" aria-label="Production slate: Scene 01, Take 2026, Director Srinivas">
+      <div class="slate" role="img" aria-label="Free Online Workshop. Production slate: Scene 01, Take 2026, Director Srinivas">
         <div class="slate-clapper" aria-hidden="true"></div>
+        <div class="slate-prod">Free Online Workshop</div>
         <div class="slate-body">
           <span class="slate-field"><span class="slate-label">Scene</span><span class="slate-val">01</span></span>
           <span class="slate-field"><span class="slate-label">Take</span><span class="slate-val">2026</span></span>
@@ -1178,7 +1226,7 @@
     <h1>
       How to <span class="accent">start</span><br>
       your filmmaking<br>
-      career in <em>2026.</em>
+      career in <em>2026</em>
     </h1>
 
     <p class="hero-sub">
@@ -1241,7 +1289,7 @@
       <h2>
         <em>100 people say</em><br>
         <span class="accent">"I want to make a film."</span><br>
-        <em>Only</em> 1 <em>actually does.</em>
+        <em>Only</em> 1 <em>actually does</em>
       </h2>
       <div class="sub">Which one are you?</div>
 
@@ -1258,7 +1306,8 @@
       <p><span class="hang">If</span>you've been waiting for the "right time," the "right camera," or the "right connections"…</p>
 
       <div class="bang">
-        You're not alone. You're in the 99. And the reason you're stuck isn't laziness. It isn't lack of talent. It's a <strong>system</strong> that was designed to keep you out.
+        <h3 class="bang-title">You're not alone</h3>
+        <p>You're in the 99. And the reason you're stuck isn't laziness. It isn't lack of talent. It's a <strong>system</strong> that was designed to keep you out.</p>
       </div>
     </div>
   </div>
@@ -1270,7 +1319,7 @@
     <div class="cur-head">
       <div>
         <div class="section-num">The Curriculum</div>
-        <h2 class="h2">What you'll learn<br><em>in two hours.</em></h2>
+        <h2 class="h2">What you'll learn<br><em>in two hours</em></h2>
       </div>
       <p class="lede">Five modules. One working framework. No fluff. Here's the exact map of what gets taught, in order.</p>
     </div>
@@ -1331,7 +1380,7 @@
 
     <div>
       <div class="section-num">The Mentor</div>
-      <h2 class="h2">Meet<br><span class="name">Rahul Srinivas.</span></h2>
+      <h2 class="h2">Meet<br><span class="name">Rahul Srinivas</span></h2>
       <div class="role">Founder · Level Up Learning · Writer · Creative Director · Producer</div>
 
       <div class="bio">
@@ -1394,7 +1443,7 @@
     <div class="warn">
       <div class="badge">Not<br>For</div>
       <div>
-        <h4>⚠ This is NOT for you if…</h4>
+        <h3>This is not for you if…</h3>
         <p>You're looking for a magic shortcut or a "become a filmmaker in 7 days" hack. This session respects your time, which means we're going to tell you the truth, and the truth requires work.</p>
       </div>
     </div>
@@ -1406,7 +1455,7 @@
   <div class="wrap brand-grid">
     <div>
       <div class="section-num">The Community</div>
-      <h2 class="brand-title">LevelUp<br>Learning.</h2>
+      <h2 class="brand-title">LevelUp<br>Learning</h2>
       <div class="brand-sub">India's Largest Filmmaking Community</div>
 
       <div class="brand-body">
@@ -1442,7 +1491,7 @@
   <div class="wrap">
     <div class="proof-head">
       <div class="section-num">Hear What They Say</div>
-      <h2 class="h2">You're not the first<br><em>to show up here.</em></h2>
+      <h2 class="h2">You're not the first<br><em>to show up here</em></h2>
       <p class="lede" style="margin-top: 24px;">Over 25,000 aspiring filmmakers have learned from Rahul and the Level Up community. Here's what some of them said.</p>
     </div>
 
@@ -1471,7 +1520,7 @@
 <section class="logi section reveal" id="logistics" data-screen-label="07 Logistics">
   <div class="wrap">
     <div class="section-num">The Masterclass</div>
-    <h2 class="h2" style="max-width: 18ch">Here's everything<br><em>you need to know.</em></h2>
+    <h2 class="h2" style="max-width: 18ch">Here's everything<br><em>you need to know</em></h2>
     <p class="lede" style="margin-top: 24px;">The masterclass is <strong style="color:var(--accent); font-weight: 600;">completely free</strong>. All we need is your commitment to show up live.</p>
 
     <div class="info-grid">
@@ -1508,7 +1557,7 @@
   <div class="wrap bonus-grid">
     <div>
       <div class="section-num">Bonus</div>
-      <h2 class="h2">The bonus stack.<br><em>Yours the moment you register.</em></h2>
+      <h2 class="h2">The bonus stack<br><em>Yours the moment you register</em></h2>
       <p class="lede" style="margin-top: 24px;">Four assets you'll actually use in the next 30 days: worksheets, frameworks and community access. Delivered right after the session.</p>
 
       <div class="countdown" role="timer" aria-label="Registration countdown">
@@ -1557,7 +1606,7 @@
 <section class="faq section reveal" id="faq" data-screen-label="09 FAQ">
   <div class="wrap-narrow">
     <div class="section-num">Questions</div>
-    <h2 class="h2">Questions you<br><em>might have.</em></h2>
+    <h2 class="h2">Questions you<br><em>might have</em></h2>
 
     <div class="faq-list">
       <details open="">
@@ -1611,7 +1660,7 @@
         <span class="slate-field"><span class="slate-label">Dir.</span><span class="slate-val">Srinivas</span></span>
       </div>
     </div>
-    <h2><em>You came here</em><br>for a <span style="color:var(--accent); font-style: normal;">reason.</span></h2>
+    <h2><em>You came here</em><br>for a <span style="color:var(--accent); font-style: normal;">reason</span></h2>
     <div class="final-body">
       <p>Maybe you've been thinking about this for years. Maybe it hit you last week.</p>
       <p>Either way, <span class="big-num">100</span> people will read this page today. <span class="big-num">99</span> of them will close it and go back to telling themselves <em>"someday."</em></p>
