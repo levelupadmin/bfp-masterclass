@@ -223,7 +223,6 @@
   }
   .hero > .wrap,
   .hero > .marquee{ position: relative; z-index: 2; }
-  .hero > .filmstrip{ z-index: 1; }
   .hero-inner{ padding-bottom: 120px; }
   @media (min-width: 768px){
     .hero::before{
@@ -360,22 +359,6 @@
       margin-top: 72px;
     }
   }
-
-  /* hero film perforations background */
-  .filmstrip{
-    position: absolute; inset: 0; pointer-events: none;
-    opacity: 0.35;
-  }
-  .filmstrip .edge{
-    position: absolute; top: 0; bottom: 0; width: 30px;
-    background-image:
-      linear-gradient(#181613 50%, transparent 50%),
-      linear-gradient(90deg, transparent 6px, #2A2722 6px, #2A2722 24px, transparent 24px);
-    background-size: 30px 46px, 30px 46px;
-    background-repeat: repeat-y;
-  }
-  .filmstrip .edge.left{ left: -2px; }
-  .filmstrip .edge.right{ right: -2px; }
 
   /* scroll marquee under hero */
   .marquee{
@@ -752,26 +735,23 @@
   /* ---------- logistics ---------- */
   .logi{ background: var(--bg-2); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule); }
   .info-grid{
-    display:grid; grid-template-columns: 1fr;
+    display:grid; grid-template-columns: 1fr 1fr;
     border: 1px solid var(--rule);
     margin-top: 56px;
   }
   .info{
-    padding: 32px; border-right: 0;
+    padding: 22px;
+    border-right: 1px solid var(--rule);
     border-bottom: 1px solid var(--rule);
-    display:flex; flex-direction: column; gap: 14px;
-    min-height: 210px;
+    display:flex; flex-direction: column; gap: 12px;
+    min-height: 180px;
   }
-  .info:last-child{ border-bottom: 0; }
-  @media (min-width: 480px){
-    .info-grid{ grid-template-columns: 1fr 1fr; }
-    .info{ border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
-    .info:nth-child(2n){ border-right: 0; }
-    .info:nth-last-child(-n+2){ border-bottom: 0; }
-  }
+  .info:nth-child(2n){ border-right: 0; }
+  .info:nth-last-child(-n+2){ border-bottom: 0; }
   @media (min-width: 1024px){
     .info-grid{ grid-template-columns: repeat(4, 1fr); }
-    .info{ border-bottom: 0; border-right: 1px solid var(--rule); }
+    .info{ padding: 32px; min-height: 210px; gap: 14px; border-bottom: 0; border-right: 1px solid var(--rule); }
+    .info:nth-child(2n){ border-right: 1px solid var(--rule); }
     .info:last-child{ border-right: 0; }
   }
   .info .icon{
@@ -805,6 +785,7 @@
   .bonus-grid{
     display:grid; grid-template-columns: 1fr; gap: 48px; align-items: start;
   }
+  .bonus-grid > *{ min-width: 0; }
   @media (min-width: 1024px){ .bonus-grid{ grid-template-columns: 5fr 7fr; gap: 80px; } }
   .bstack{ display:grid; gap: 0; border-top: 1px solid var(--rule); }
   .bonus-row{
@@ -832,8 +813,15 @@
   .countdown{
     margin-top: 48px;
     border: 1px solid var(--rule-2);
-    padding: 28px;
-    display:flex; flex-direction: column; gap: 20px;
+    padding: 20px;
+    display:flex; flex-direction: column; gap: 18px;
+  }
+  @media (min-width: 480px){
+    .countdown{ padding: 28px; gap: 20px; }
+  }
+  .countdown .btn{ font-size: 0.875rem; padding: 16px 18px; }
+  @media (min-width: 480px){
+    .countdown .btn{ font-size: 0.9375rem; padding: 18px 22px; }
   }
   .countdown .label{
     font-family: var(--mono); font-size: 0.6875rem; letter-spacing: 0.04em; /* tt-off */ color: var(--dim);
@@ -891,7 +879,7 @@
   details .a{
     margin: 18px 0 0 72px;
     color: var(--fg-2);
-    font-size: 1rem; line-height: 1.7;
+    font-size: 0.875rem; line-height: 1.65;
     max-width: 72ch;
   }
   details .a strong{ color: var(--fg); font-weight: 600; }
@@ -1229,10 +1217,6 @@
 
 <!-- ============ HERO ============ -->
 <section class="hero" data-screen-label="01 Hero">
-  <div class="filmstrip" aria-hidden="true">
-    <div class="edge left"></div>
-    <div class="edge right"></div>
-  </div>
   <div class="wrap hero-inner">
       <span class="hero-tag">
         <span class="pin">●</span>
