@@ -268,17 +268,6 @@
     );
     border-bottom: 1px solid var(--rule-2);
   }
-  .slate-prod{
-    padding: 4px 12px 5px;
-    font-size: 0.5625rem;
-    letter-spacing: 0.14em;
-    text-align: center;
-    color: var(--accent);
-    background: color-mix(in oklab, var(--accent) 8%, transparent);
-    border-bottom: 1px solid var(--rule-2);
-    text-transform: uppercase;
-    font-weight: 600;
-  }
   .slate-body{
     display: flex;
     align-items: stretch;
@@ -693,16 +682,49 @@
   /* ---------- social proof ---------- */
   .proof{ background: var(--bg); }
   .proof-head{ text-align: left; max-width: 780px; margin-bottom: 72px; }
+  /* Testimonials slideshow */
+  .t-slider{ position: relative; }
   .tgrid{
-    display:grid; grid-template-columns: 1fr; gap: 2px;
-    background: var(--rule);
-    border: 1px solid var(--rule);
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    background: transparent;
+    border: 0;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    -webkit-overflow-scrolling: touch;
+    gap: 16px;
   }
-  @media (min-width: 768px){ .tgrid{ grid-template-columns: 1fr 1fr; } }
+  .tgrid::-webkit-scrollbar{ display: none; }
   .t{
-    background: var(--bg); padding: 40px;
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    background: var(--bg-2);
+    border: 1px solid var(--rule);
+    border-radius: 16px;
+    padding: 32px;
     display: flex; flex-direction: column; justify-content: space-between;
     min-height: 320px;
+  }
+  .t-nav{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 28px;
+  }
+  .t-dot{
+    width: 8px; height: 8px;
+    border-radius: 999px;
+    background: var(--rule-2);
+    border: 0; padding: 0;
+    cursor: pointer;
+    transition: background .25s ease, width .25s ease;
+  }
+  .t-dot:hover{ background: var(--dim); }
+  .t-dot.active{
+    background: var(--accent);
+    width: 24px;
   }
   .t .q{
     font-family: var(--display);
@@ -1126,7 +1148,6 @@
   .warn{ border-radius: 16px; }
   .warn .badge{ border-radius: 8px; }
   .check{ border-radius: 8px; }
-  .tgrid{ border-radius: 16px; overflow: hidden; }
   .info-grid{ border-radius: 16px; overflow: hidden; }
   .info .icon{ border-radius: 8px; }
   .countdown{ border-radius: 16px; }
@@ -1213,15 +1234,12 @@
     <div class="edge right"></div>
   </div>
   <div class="wrap hero-inner">
-      <div class="slate" role="img" aria-label="Free Online Workshop. Production slate: Scene 01, Take 2026, Director Srinivas">
-        <div class="slate-clapper" aria-hidden="true"></div>
-        <div class="slate-prod">Free Online Workshop</div>
-        <div class="slate-body">
-          <span class="slate-field"><span class="slate-label">Scene</span><span class="slate-val">01</span></span>
-          <span class="slate-field"><span class="slate-label">Take</span><span class="slate-val">2026</span></span>
-          <span class="slate-field"><span class="slate-label">Dir.</span><span class="slate-val">Srinivas</span></span>
-        </div>
-      </div>
+      <span class="hero-tag">
+        <span class="pin">●</span>
+        <span>Free 2-Hour Live Masterclass</span>
+        <span class="divider"></span>
+        <span>Hosted Online</span>
+      </span>
 
     <h1>
       How to <span class="accent">start</span><br>
@@ -1495,22 +1513,30 @@
       <p class="lede" style="margin-top: 24px;">Over 25,000 aspiring filmmakers have learned from Rahul and the Level Up community. Here's what some of them said.</p>
     </div>
 
-    <div class="tgrid">
-      <div class="t">
-        <div class="q">Before this, filmmaking felt too big and out of reach. But the way the concepts were taught made it feel possible, and even exciting. I finally feel confident to start working on my own ideas.</div>
-        <div class="who-line"><span class="avatar">V</span> Vikram D. · Aspiring Filmmaker</div>
+    <div class="t-slider">
+      <div class="tgrid">
+        <div class="t">
+          <div class="q">Before this, filmmaking felt too big and out of reach. But the way the concepts were taught made it feel possible, and even exciting. I finally feel confident to start working on my own ideas.</div>
+          <div class="who-line"><span class="avatar">V</span> Vikram D. · Aspiring Filmmaker</div>
+        </div>
+        <div class="t">
+          <div class="q">What I loved most was the honesty. No sugar-coating, just real insights from people who've been there. It gave me a clear picture of what it actually takes to be in the industry.</div>
+          <div class="who-line"><span class="avatar">S</span> Sneha P. · Visual Storytelling Enthusiast</div>
+        </div>
+        <div class="t">
+          <div class="q">I was about to pursue a 1-year filmmaking diploma, but my parents weren't allowing me to quit my job. That's when I found Level Up. I had a great experience and gained so much knowledge about cinema. At the end of the day I feel complete.</div>
+          <div class="who-line"><span class="avatar">S</span> Sudhan Maaran · Student</div>
+        </div>
+        <div class="t">
+          <div class="q">The most valuable thing is the insider, current-day view on how things work in the industry today, something you simply cannot find anywhere else online. The teachers were highly knowledgeable. Great course curation.</div>
+          <div class="who-line"><span class="avatar">N</span> Neeraj Mohan · IT Professional</div>
+        </div>
       </div>
-      <div class="t">
-        <div class="q">What I loved most was the honesty. No sugar-coating, just real insights from people who've been there. It gave me a clear picture of what it actually takes to be in the industry.</div>
-        <div class="who-line"><span class="avatar">S</span> Sneha P. · Visual Storytelling Enthusiast</div>
-      </div>
-      <div class="t">
-        <div class="q">I was about to pursue a 1-year filmmaking diploma, but my parents weren't allowing me to quit my job. That's when I found Level Up. I had a great experience and gained so much knowledge about cinema. At the end of the day I feel complete.</div>
-        <div class="who-line"><span class="avatar">S</span> Sudhan Maaran · Student</div>
-      </div>
-      <div class="t">
-        <div class="q">The most valuable thing is the insider, current-day view on how things work in the industry today, something you simply cannot find anywhere else online. The teachers were highly knowledgeable. Great course curation.</div>
-        <div class="who-line"><span class="avatar">N</span> Neeraj Mohan · IT Professional</div>
+      <div class="t-nav" role="tablist" aria-label="Testimonials navigation">
+        <button class="t-dot active" type="button" aria-label="Show testimonial 1"></button>
+        <button class="t-dot" type="button" aria-label="Show testimonial 2"></button>
+        <button class="t-dot" type="button" aria-label="Show testimonial 3"></button>
+        <button class="t-dot" type="button" aria-label="Show testimonial 4"></button>
       </div>
     </div>
   </div>
@@ -1710,6 +1736,50 @@
       });
     }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
     els.forEach(function(el){ io.observe(el); });
+  })();
+
+  // Testimonial slideshow — scroll-snap + dots + auto-advance
+  (function(){
+    var slider = document.querySelector('.t-slider');
+    if(!slider) return;
+    var grid = slider.querySelector('.tgrid');
+    var slides = grid.querySelectorAll('.t');
+    var dots = slider.querySelectorAll('.t-dot');
+    if(!slides.length || !dots.length) return;
+    var current = 0;
+    var auto = null;
+    function setActive(i){
+      current = i;
+      dots.forEach(function(d, idx){ d.classList.toggle('active', idx === i); });
+    }
+    function goTo(i){
+      var slide = slides[i];
+      grid.scrollTo({ left: slide.offsetLeft, behavior: 'smooth' });
+      setActive(i);
+    }
+    dots.forEach(function(d, i){
+      d.addEventListener('click', function(){ goTo(i); restart(); });
+    });
+    var t;
+    grid.addEventListener('scroll', function(){
+      clearTimeout(t);
+      t = setTimeout(function(){
+        var w = slides[0].getBoundingClientRect().width;
+        var gap = parseFloat(getComputedStyle(grid).columnGap) || 0;
+        var idx = Math.round(grid.scrollLeft / (w + gap));
+        if(idx >= 0 && idx < slides.length && idx !== current) setActive(idx);
+      }, 80);
+    });
+    function start(){ auto = setInterval(function(){ goTo((current + 1) % slides.length); }, 2000); }
+    function stop(){ if(auto) { clearInterval(auto); auto = null; } }
+    function restart(){ stop(); start(); }
+    slider.addEventListener('mouseenter', stop);
+    slider.addEventListener('mouseleave', start);
+    grid.addEventListener('touchstart', stop, { passive: true });
+    grid.addEventListener('touchend', restart, { passive: true });
+    if(!('matchMedia' in window) || !window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      start();
+    }
   })();
 
   // Number counter — animates 0 -> data-counter over 2s when in view
