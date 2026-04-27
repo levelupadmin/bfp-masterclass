@@ -20,6 +20,10 @@
   @font-face { font-family: 'Aileron'; src: url('fonts/Aileron-Bold.woff2') format('woff2');          font-weight: 700; font-style: normal; font-display: swap; }
   @font-face { font-family: 'Aileron'; src: url('fonts/Aileron-BoldItalic.woff2') format('woff2');    font-weight: 700; font-style: italic; font-display: swap; }
 
+  /* Monument Extended — display font (used selectively where applied) */
+  @font-face { font-family: 'Monument Extended'; src: url('fonts/MonumentExtended-Regular.woff2') format('woff2');   font-weight: 400; font-style: normal; font-display: swap; }
+  @font-face { font-family: 'Monument Extended'; src: url('fonts/MonumentExtended-Ultrabold.woff2') format('woff2'); font-weight: 800; font-style: normal; font-display: swap; }
+
   :root{
     --bg: #0E0D0B;
     --bg-2: #141210;
@@ -1001,6 +1005,7 @@
   }
   .roster-collage{
     display: block;
+    max-width: none;
     width: calc(100% + 64px);
     height: auto;
     margin: 8px -32px -1px;
@@ -1414,7 +1419,6 @@
     <aside class="brand-card">
       <div class="brand-card-mark">
         <img src="assets/levelup-logo.png" alt="LevelUp Learning">
-        <span class="tag">Est. since launch</span>
       </div>
       <div class="bstat">
         <div class="bstat-n"><span class="num" data-counter="300000">0</span><span>+</span></div>
